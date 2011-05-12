@@ -10,7 +10,7 @@ include "config.php";
 include "../../library/procedure/typeValidator.php";
 
 $msg = "Mauvaise entrée";
-$connected = typeValidator::isSessionConnected();
+$connected = isSessionConnected();
 if( $action = isset( $_GET["action"] )? typeValidator::isAlphaNumeric( $_GET["action"] ): false ) {
   if( $action == "getHomeInfo" ) {
     $msg = getHomeInfo();
@@ -879,4 +879,18 @@ function getTheme() {
     return theme::getDetail( $id );
   }
   return "Mauvais identifiant";
+}
+
+/****************************************************************************/
+function isSessionConnected() {
+  if( isset( $_SESSION["connected"] )? $_SESSION["connected"]: false ) {
+    setcookie( "connected", true, time() + 3600 );
+    return true;
+  }
+  if( isset( $_COOKIE["connected"] )? $_COOKIE["connected"]: false ) {
+    $_SESSION["connected"] = true;
+    setcookie( "connected", true, time() + 3600 );
+    return true;
+  }
+  return false;
 }

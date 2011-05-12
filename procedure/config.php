@@ -26,14 +26,16 @@ $COMPRESS_LIST = array(
 
 $MERGE_LIST = array(
     "index"=>array( 
-        "css" => array( "../style/base.css",
+        "css" => array( "../../external/style/boilerplate.style.css",
+                        "../../external/style/holmes.min.css",
+                        "../style/base.css",
                         "../style/main.css",
                         "../style/color.css",
                         "../style/form.css",
                         "../style/text.css",
                         "../style/rounded.css" ),
-        "js" => array( "../../external/interaction/jquery-1.3.2.min.js",
-                       "../../external/interaction/jquery-ui-1.7.2.custom.min.js",
+        "js" => array( "../../external/interaction/jquery-1.6.min.js",
+                       "../../external/interaction/jquery-ui-1.8.11.custom.min.js",
                        "../../library/interaction/common.js",
                        "../interaction/main.js" )
     ),
