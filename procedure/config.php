@@ -34,7 +34,7 @@ $MERGE_LIST = array(
                         "../style/form.css",
                         "../style/text.css",
                         "../style/rounded.css" ),
-        "js" => array( "../../external/interaction/jquery-1.6.min.js",
+        "js" => array( "../../external/interaction/jquery-1.6.1.min.js",
                        "../../external/interaction/jquery-ui-1.8.11.custom.min.js",
                        "../../library/interaction/common.js",
                        "../interaction/main.js" )

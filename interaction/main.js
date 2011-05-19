@@ -88,7 +88,7 @@ var _m = {
 
   /****************************************************************************/
   callBuildSongList: function (ajaxItem) {
-    ajaxItem.buildSongList(_c.ajaxList.procedure.getSongList, _c.select("#songList"));
+    ajaxItem.prepareSongResult( _c.select( "#songList" ) );
     _c.eachItem(["lastAdded", "lastModified", "lastViewed", "mostVisited"], function (songListItem) {
       ajaxItem.buildSongList(_c.ajaxList.procedure.getHomeInfo[songListItem], _c.select("#" + songListItem));
       return false;

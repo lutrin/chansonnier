@@ -39,6 +39,8 @@ if( $action = isset( $_GET["action"] )? typeValidator::isAlphaNumeric( $_GET["ac
   } elseif( $action == "getTheme" ) {
     $msg = getTheme();
   }
+} elseif( $mainMode ) {
+  $msg = displayMain();
 } elseif( ( $action = isset( $_POST["action"] )? typeValidator::isAlphaNumeric( $_POST["action"] ): false ) ||
           $connected || $adminMode ) {
   if( $connected ) {
@@ -77,6 +79,51 @@ if( $msg ) {
   print $msg;
 }
 exit;
+
+/******************************************************************************/
+function displayMain() {
+
+  # get content
+  $content = file_get_contents( "../../library/template/index.html" );
+  $body = file_get_contents( "../template/main.html" );
+
+  # get styles TODO merge
+  $styleList = array( "../external/style/boilerplate.style.css",
+                      "../external/style/holmes.min.css",
+                      "style/base.css",
+                      "style/main.css",
+                      "style/color.css",
+                      "style/form.css",
+                      "style/text.css",
+                      "style/rounded.css" );
+  $stylesheet = "<link rel='stylesheet' href='" . join( "' /><link rel='stylesheet' href='", $styleList ) . "' />";
+
+  # get script TODO merge
+  $scriptList = array( "../external/interaction/jquery-1.6.1.min.js",
+                       "../external/interaction/jquery-ui-1.8.11.custom.min.js",
+                       "../library/interaction/common.js",
+                       "interaction/main.js" );
+  $body_script = "<script src='" . join( "'> </script><script src='", $scriptList ) . "'> </script>";
+
+  $songList = buildSongList();
+  $body = str_replace( "###songList###", $songList, $body );
+  
+  $params = array(
+    "###lang###"        => "fr",
+    "###charset###"     => "UTF-8",
+    "###title###"       => "Chansonnier - Lutrin",
+    "###description###" => "Répertoire de paroles et de partitions de chansons",
+    "###author###"      => "Eric Barolet",
+    "###meta###"        => "",
+    "###stylesheet###"  => $stylesheet,
+    "###head_script###" => "<script src='../external/interaction/modernizr-1.7.min.js'> </script>",
+    "###class###"       => "main",
+    "###body###"        => $body,
+    "###body_script###" => $body_script
+  );
+  header( "Content-Type: text/html; charset=utf8" );
+  return str_replace( array_keys( $params ), array_values( $params ), $content );
+}
 
 /******************************************************************************/
 function login() {
@@ -684,6 +731,35 @@ function getSongList() {
     include $include;
   }
   return song::getList();
+}
+
+/******************************************************************************/
+function buildSongList() {
+  $includeList = array( "../../library/procedure/cache.php",
+                        "../../library/procedure/dbConnect.php",
+                        "data.php",
+                        "song.php" );
+  if( isset( $_GET["artistId"] ) ) {
+    if( $artistId = typeValidator::isAlphaNumeric( $_GET["artistId"] ) ) {
+      foreach( $includeList as $include ) {
+        include $include;
+      }
+      return song::buildList( $artistId, "artist" );
+    }
+    return "Mauvaise entrée";
+  } elseif( isset( $_GET["themeId"] ) ) {
+    if( $themeId = typeValidator::isAlphaNumeric( $_GET["themeId"] ) ) {
+      foreach( $includeList as $include ) {
+        include $include;
+      }
+      return song::buildList( $themeId, "theme" );
+    }
+    return "Mauvaise entrée";
+  }
+  foreach( $includeList as $include ) {
+    include $include;
+  }
+  return song::buildList();
 }
 
 /******************************************************************************/

@@ -70,8 +70,67 @@ class song extends data {
   }
 
   /****************************************************************************/
+  public static function buildList( $id = "", $mode = "" ) {
+    $list = json_decode( self::getList( $id, $mode ), 1 );
+    $songList = array();
+    foreach( $list as $song ) {
+      $html = $song["id"] . "' class='";
+      $songList[] =
+        $html . ( isset( $song["version"] )?
+          self::buildVersionList( $song ):
+          self::buildSong( $song ) );
+    }
+    return "<li id='" . join( "</li><li id='", $songList ) . "</li>";
+  }
+
+  /****************************************************************************/
+  protected static function buildVersionList( $song ) {
+    $itemId = $song["id"];
+    $html = "versionList plus"
+          . ( is_numeric( substr( $itemId, 0, 1 ) )? " numeric": "" )
+          . "'><a name='$itemId' class='documentTitle'>{$song['name']}</a><ul id='version_$itemId' class='collapsed'><li id='";
+    $versionList = array();
+    $versions = is_array( $song["version"] )? $song["version"]: array( $song["version"] );
+    foreach( $versions as $version ) {
+      $versionList[] = self::buildVersion( $version, $song );
+    }
+    $html .= join( "</li><li id='", $versionList );
+    return $html . "</li></ul>";
+  }
+
+  /****************************************************************************/
+  protected static function buildSong( $song ) {
+    $itemId = $song["id"];
+    return "song {$song['language']}"
+         . ( is_numeric( substr( $itemId, 0, 1 ) ) ? " numeric" : "" )
+         . "'><a name='{$song['id']}' class='documentTitle'>{$song['name']}</a>";
+  }
+
+  /****************************************************************************/
+  protected static function buildVersion( $version, $song ) {
+    $documentName = $song["id"] . "_" . $version["id"];
+    return $documentName . "' class='" . self::buildSong( array(
+      "id" => $documentName,
+      "name" => $version["name"],
+      "artist" => $version["artist"],
+      "language" => $song["language"]
+    ) );
+  }
+  
+  /****************************************************************************/
   public static function getHome() {
-    $infoList = array();
+    header( 'Content-Type: application/json; charset=UTF-8' );
+    return json_encode( self::prepareHome() );
+  }
+
+  /****************************************************************************/
+  public static function buildHome() {
+    $home = self::getHome();
+  }
+  
+  /****************************************************************************/
+  private static function prepareHome() {
+      $infoList = array();
 
     # get added song list
 $sql = self::buildHomeSql( "created" );
@@ -120,11 +179,11 @@ $sql = self::buildHomeSql( "visitQty", $sql );
     }
     $buildedInfo = self::buildSongList( $result, $excludedK );
     $infoList["mostVisited"] = $buildedInfo[0];
-
-    header( 'Content-Type: application/json; charset=UTF-8' );
-    return json_encode( $infoList );
+    
+    return $infoList;
   }
-
+  
+  
   /****************************************************************************/
   private static function buildHomeSql( $field, $excluded = "" ) {
     $sqlInterpreterExists = "SELECT versionK FROM interpreter WHERE versionK = version.k";
