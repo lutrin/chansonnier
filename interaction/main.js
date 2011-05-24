@@ -9,7 +9,7 @@ var _m = {
   displayResult: function (word) {
     var hiddenWordObj = _c.select("#hiddenWord"),
         hiddenWord = hiddenWordObj.val(),
-        stringWord = word.hasClass("wordEmpty") ? "" : word.val().replace(/^\s\s*/, "").replace(/\s\s*$/, "").replace(/\'/, ""),
+        stringWord = !word.val() ? "" : word.val().replace(/^\s\s*/, "").replace(/\s\s*$/, "").replace(/\'/, ""),
         firstLetter = _c.select("#hiddenLetter").val(),
         filter, mode, hideQuery, showQuery;
     if (firstLetter == "all") {
@@ -90,7 +90,7 @@ var _m = {
   callBuildSongList: function (ajaxItem) {
     ajaxItem.prepareSongResult( _c.select( "#songList" ) );
     _c.eachItem(["lastAdded", "lastModified", "lastViewed", "mostVisited"], function (songListItem) {
-      ajaxItem.buildSongList(_c.ajaxList.procedure.getHomeInfo[songListItem], _c.select("#" + songListItem));
+      ajaxItem.prepareSongResult( _c.select( "#" + songListItem ) );
       return false;
     });
   },
@@ -237,14 +237,7 @@ var _m = {
       return false;
     });
     word = _c.select("#word");
-    word.val("Rechercher").click(function (event) {
-      var formInput = $(this);
-      if (formInput.hasClass("wordEmpty")) {
-        formInput.removeClass("wordEmpty");
-        formInput.val("");
-      }
-      return false;
-    }).bind("keyup change", function (event) {
+    word.bind("keyup change", function (event) {
       _m.displayResult($(this));
       return _m.writeQty();
     });
@@ -265,10 +258,6 @@ var _m = {
       _c.select("#hiddenWord").val("!");
       formInput.val("");
       _m.displayResult(formInput);
-      if (!formInput.hasClass("wordEmpty")) {
-        formInput.addClass("wordEmpty");
-      }
-      formInput.val("Rechercher");
       return false;
     };
     _c.select("#searchType").val("song");

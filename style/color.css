@@ -1,1 +1,54 @@
-body{color:#000000}.dot{color:#FFFFFF}.wordEmpty{color:#bbbbbb}.sectionList li a{color:#0000AA}div.tab,div.tabSelected,div.doc,div.docSelected,.chordTab,.popupTab,.button{color:#FFFFFF}body.main{background-color:#F8F4E3}#wordInput,.contentEditor .textareaInput,.optionItemList,.choiceList:hover,.textInput,#itemList,li.section div.groupList ul,ul#songList li.song:hover,ul#artistList li.song:hover,.row,.rowOff,table.keyList tr td,.songResult:hover,#lastAdded,#lastModified,#lastViewed,#mostVisited{background-color:#FFFFFF}#searchBy,li.reference,a.documentTitle:focus,.menuList,ul.stringList,.note,.noteOff,.chordSection,.contentHeader,.contentEditor,.popupInner,.fingeringControl,.fretNumber{background-color:#D4E5E5}div.groupTitle,li.section div.groupList{background-color:#D4E5E5}.checked{background-color:#E7AF83}.button{background-color:#777}.button:hover{background-color:#444}.pos3,.pos5,.pos7,.pos9,.pos12,.pos15,.pos17,.pos19{background-color:#E1E1E1}div.documentSelected,#search,#tool,#document,div.tab,div.tabSelected,div.doc,div.docSelected,.neck,.chordTab,.popupTab,.popupBody,.chordFooter{background-color:#618383}.optionItem,.choiceList,.tableCell,.infoItem,.toolListContent{border-color:#FFFFFF}.optionItem:hover,.choiceList:hover,.choiceList .choiceSubList .optionItemList{border-color:#0A3C3C}.paused #metronomeLight{background-color:#D4E5E5}.lightBlue{background-color:#555555}.lightRed{background-color:#E7AF83}
+body, a, a:active, a:visited {
+	 color:#000000 }
+
+ .dot {
+	color:#FFFFFF}
+
+.sectionList li a {
+	color:#0000AA}
+
+div.tab,div.tabSelected,div.doc,div.docSelected,.chordTab,.popupTab,.button {
+	color:#FFFFFF}
+
+body.main {
+	background-color:#F8F4E3}
+
+#wordInput,.contentEditor .textareaInput,.optionItemList,.choiceList:hover,.textInput,#itemList,li.section div.groupList ul,ul#songList li.song:hover,ul#artistList li.song:hover,.row,.rowOff,table.keyList tr td,.songResult:hover,#lastAdded,#lastModified,#lastViewed,#mostVisited {
+	background-color:#FFFFFF}
+
+#searchBy,li.reference,a.documentTitle:focus,.menuList,ul.stringList,.note,.noteOff,.chordSection,.contentHeader,.contentEditor,.popupInner,.fingeringControl,.fretNumber {
+	background-color:#D4E5E5}
+
+div.groupTitle,li.section div.groupList {
+	background-color:#D4E5E5}
+
+.checked {
+	background-color:#E7AF83}
+
+.button {
+	background-color:#777}
+
+.button:hover {
+	background-color:#444}
+
+.pos3,.pos5,.pos7,.pos9,.pos12,.pos15,.pos17,.pos19 {
+	background-color:#E1E1E1}
+
+div.documentSelected,#search,#tool,#document,div.tab,div.tabSelected,div.doc,div.docSelected,.neck,.chordTab,.popupTab,.popupBody,.chordFooter {
+	background-color:#618383}
+
+.optionItem,.choiceList,.tableCell,.infoItem,.toolListContent {
+	border-color:#FFFFFF}
+
+.optionItem:hover,.choiceList:hover,.choiceList .choiceSubList .optionItemList {
+	border-color:#0A3C3C}
+
+.paused #metronomeLight {
+	background-color:#D4E5E5}
+
+.lightBlue {
+	background-color:#555555}
+
+.lightRed {
+	background-color:#E7AF83}
+

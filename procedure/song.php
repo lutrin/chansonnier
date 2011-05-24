@@ -71,18 +71,22 @@ class song extends data {
 
   /****************************************************************************/
   public static function buildList( $id = "", $mode = "" ) {
-    $list = json_decode( self::getList( $id, $mode ), 1 );
+    return self::prepareList( json_decode( self::getList( $id, $mode ), 1 ) );
+  }
+
+  /****************************************************************************/
+  protected static function prepareList( $list ) {
     $songList = array();
     foreach( $list as $song ) {
       $html = $song["id"] . "' class='";
       $songList[] =
-        $html . ( isset( $song["version"] )?
-          self::buildVersionList( $song ):
-          self::buildSong( $song ) );
+      $html . ( isset( $song["version"] )?
+                self::buildVersionList( $song ):
+                self::buildSong( $song ) );
     }
     return "<li id='" . join( "</li><li id='", $songList ) . "</li>";
   }
-
+  
   /****************************************************************************/
   protected static function buildVersionList( $song ) {
     $itemId = $song["id"];
@@ -125,7 +129,12 @@ class song extends data {
 
   /****************************************************************************/
   public static function buildHome() {
-    $home = self::getHome();
+    $home = self::prepareHome();
+    $homeList = array();
+    foreach( $home as $key => $list ) {
+      $homeList[$key] = self::prepareList( $list );
+    }
+    return $homeList;
   }
   
   /****************************************************************************/

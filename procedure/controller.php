@@ -6,8 +6,8 @@ if( substr_count( $_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip' ) ) {
 }
 session_start();
 
-include "config.php";
-include "../../library/procedure/typeValidator.php";
+include_once "config.php";
+include_once "../../library/procedure/typeValidator.php";
 
 $msg = "Mauvaise entrée";
 $connected = isSessionConnected();
@@ -107,6 +107,9 @@ function displayMain() {
 
   $songList = buildSongList();
   $body = str_replace( "###songList###", $songList, $body );
+  foreach( buildHomeInfo() as $key => $home ) {
+    $body = str_replace( "###$key###", $home, $body );
+  }
   
   $params = array(
     "###lang###"        => "fr",
@@ -163,7 +166,7 @@ function callCleanAll() {
                         "../../external/procedure/jsmin.php",
                         "../../library/procedure/clean.php" );
   foreach( $includeList as $include ) {
-    include $include;
+    include_once $include;
   }
   return str_replace( "###body###",
                       cleanAll() . "<div class='button'><a href='admin.php'>Retour</a></div>",
@@ -172,7 +175,7 @@ function callCleanAll() {
 
 /******************************************************************************/
 function setSong() {
-  include "../../library/procedure/dbConnect.php";
+  include_once "../../library/procedure/dbConnect.php";
 
   # get post
   $params = array();
@@ -295,7 +298,7 @@ function setSong() {
                         "track.php",
                         "../../library/procedure/clean.php" );
   foreach( $includeList as $include ) {
-    include $include;
+    include_once $include;
   }
 
   # setting
@@ -355,7 +358,7 @@ function setSong() {
 
 /******************************************************************************/
 function setArtist() {
-  include "../../library/procedure/dbConnect.php";
+  include_once "../../library/procedure/dbConnect.php";
 
   # get post
   $params = array();
@@ -438,7 +441,7 @@ function setArtist() {
                         "track.php",
                         "../../library/procedure/clean.php" );
   foreach( $includeList as $include ) {
-    include $include;
+    include_once $include;
   }
 
   # setting
@@ -495,7 +498,7 @@ function setArtist() {
 
 /******************************************************************************/
 function setAlbum() {
-  include "../../library/procedure/dbConnect.php";
+  include_once "../../library/procedure/dbConnect.php";
 
   # get post
   $params = array();
@@ -544,7 +547,7 @@ function setAlbum() {
                         "album.php",
                         "../../library/procedure/clean.php" );
   foreach( $includeList as $include ) {
-    include $include;
+    include_once $include;
   }
 
   # setting
@@ -565,7 +568,7 @@ function setAlbum() {
 
 /******************************************************************************/
 function setDocument() {
-  include "../../library/procedure/dbConnect.php";
+  include_once "../../library/procedure/dbConnect.php";
 
   # get post
   $params = array();
@@ -613,7 +616,7 @@ function setDocument() {
                         "document.php",
                         "../../library/procedure/clean.php" );
   foreach( $includeList as $include ) {
-    include $include;
+    include_once $include;
   }
 
   # setting
@@ -634,7 +637,7 @@ function setDocument() {
 
 /******************************************************************************/
 function setTheme() {
-  include "../../library/procedure/dbConnect.php";
+  include_once "../../library/procedure/dbConnect.php";
 
   # get post
   $params = array();
@@ -679,7 +682,7 @@ function setTheme() {
                         "song.php",
                         "../../library/procedure/clean.php" );
   foreach( $includeList as $include ) {
-    include $include;
+    include_once $include;
   }
 
   # setting
@@ -713,7 +716,7 @@ function getSongList() {
   if( isset( $_GET["artistId"] ) ) {
     if( $artistId = typeValidator::isAlphaNumeric( $_GET["artistId"] ) ) {
       foreach( $includeList as $include ) {
-        include $include;
+        include_once $include;
       }
       return song::getList( $artistId, "artist" );
     }
@@ -721,14 +724,14 @@ function getSongList() {
   } elseif( isset( $_GET["themeId"] ) ) {
     if( $themeId = typeValidator::isAlphaNumeric( $_GET["themeId"] ) ) {
       foreach( $includeList as $include ) {
-        include $include;
+        include_once $include;
       }
       return song::getList( $themeId, "theme" );
     }
     return "Mauvaise entrée";
   }
   foreach( $includeList as $include ) {
-    include $include;
+    include_once $include;
   }
   return song::getList();
 }
@@ -742,7 +745,7 @@ function buildSongList() {
   if( isset( $_GET["artistId"] ) ) {
     if( $artistId = typeValidator::isAlphaNumeric( $_GET["artistId"] ) ) {
       foreach( $includeList as $include ) {
-        include $include;
+        include_once $include;
       }
       return song::buildList( $artistId, "artist" );
     }
@@ -750,14 +753,14 @@ function buildSongList() {
   } elseif( isset( $_GET["themeId"] ) ) {
     if( $themeId = typeValidator::isAlphaNumeric( $_GET["themeId"] ) ) {
       foreach( $includeList as $include ) {
-        include $include;
+        include_once $include;
       }
       return song::buildList( $themeId, "theme" );
     }
     return "Mauvaise entrée";
   }
   foreach( $includeList as $include ) {
-    include $include;
+    include_once $include;
   }
   return song::buildList();
 }
@@ -769,7 +772,7 @@ function getVersionList() {
                         "data.php",
                         "version.php" );
     foreach( $includeList as $include ) {
-      include $include;
+      include_once $include;
     }
     return version::getList();
 }
@@ -780,9 +783,20 @@ function getHomeInfo() {
                         "data.php",
                         "song.php" );
   foreach( $includeList as $include ) {
-    include $include;
+    include_once $include;
   }
   return song::getHome();
+}
+
+/******************************************************************************/
+function buildHomeInfo() {
+  $includeList = array( "../../library/procedure/dbConnect.php",
+                        "data.php",
+                        "song.php" );
+  foreach( $includeList as $include ) {
+    include_once $include;
+  }
+  return song::buildHome();
 }
 
 /******************************************************************************/
@@ -797,7 +811,7 @@ function getSong() {
                           "data.php",
                           "song.php" );
     foreach( $includeList as $include ) {
-      include $include;
+      include_once $include;
     }
     return song::getDetail( $id, $mark );
   }
@@ -811,7 +825,7 @@ function getArtist() {
                           "data.php",
                           "artist.php" );
     foreach( $includeList as $include ) {
-      include $include;
+      include_once $include;
     }
     return artist::getDetail( $id );
   }
@@ -827,14 +841,14 @@ function getArtistList() {
   if( isset( $_GET["mode"] ) ) {
     if( $mode = typeValidator::isAlphaNumeric( $_GET["mode"] ) ) {
       foreach( $includeList as $include ) {
-        include $include;
+        include_once $include;
       }
       return artist::getList( $mode );
     }
     return "Mauvaise entrée";
   }
   foreach( $includeList as $include ) {
-    include $include;
+    include_once $include;
   }
   return artist::getList();
 }
@@ -846,7 +860,7 @@ function getAlbum() {
                           "data.php",
                           "album.php" );
     foreach( $includeList as $include ) {
-      include $include;
+      include_once $include;
     }
     return album::getDetail( $id );
   }
@@ -860,7 +874,7 @@ function getAlbumList() {
                         "data.php",
                         "album.php" );
   foreach( $includeList as $include ) {
-    include $include;
+    include_once $include;
   }
   return album::getList();
 }
@@ -872,7 +886,7 @@ function getCheatList() {
                         "data.php",
                         "version.php" );
   foreach( $includeList as $include ) {
-    include $include;
+    include_once $include;
   }
 
   $params = array();
@@ -911,7 +925,7 @@ function getDocumentList() {
                         "data.php",
                         "document.php" );
   foreach( $includeList as $include ) {
-    include $include;
+    include_once $include;
   }
   return document::getList();
 }
@@ -924,7 +938,7 @@ function getDocument() {
                           "data.php",
                           "document.php" );
     foreach( $includeList as $include ) {
-      include $include;
+      include_once $include;
     }
     return document::getDetail( $id );
   }
@@ -938,7 +952,7 @@ function getThemeList() {
                         "data.php",
                         "theme.php" );
   foreach( $includeList as $include ) {
-    include $include;
+    include_once $include;
   }
   return theme::getList();
 }
@@ -950,7 +964,7 @@ function getTheme() {
                           "data.php",
                           "theme.php" );
     foreach( $includeList as $include ) {
-      include $include;
+      include_once $include;
     }
     return theme::getDetail( $id );
   }

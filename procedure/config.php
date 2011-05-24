@@ -47,6 +47,7 @@ $MERGE_LIST = array(
         "js" => array( "../../external/interaction/jquery-1.3.2.min.js",
                        "../../external/interaction/jquery.wysiwyg.js",
                        "../../library/interaction/common.js",
+                       "../modalWindow.js",
                        "../interaction/admin.js" )
     ),
     "preview"=>array( 

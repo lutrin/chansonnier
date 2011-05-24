@@ -1,1 +1,52 @@
-:root{overflow-y:scroll !important}body{font-family:verdana,arial,helvetica,sans-serif;text-align:left;font-size:10px}ul,li{list-style:none;padding-left:0px;margin-left:0px}li{margin-bottom:2px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;display:block}textarea,input{outline:none}textarea{font-size:12px;resize:none}a{text-decoration:none;text-overflow:ellipsis}a:hover{cursor:pointer;cursor:hand;text-decoration:underline}img{border-width:0}iframe{border-style:none}
+@font-face {
+	 font-family: "vtRemingtonPortable";
+	 src: url("vtRemingtonPortable.ttf");
+	 }
+
+ :root {
+	overflow-y:scroll !important}
+
+ body {
+	font-family:verdana,arial,helvetica,sans-serif;
+	text-align:left;
+	font-size:10px}
+
+ h1 {
+	 font-size: 20px;
+	 font-family: "vtRemingtonPortable";
+	 }
+
+ ul,li {
+	list-style:none;
+	padding-left:0px;
+	margin-left:0px}
+
+li {
+	margin-bottom:2px;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:nowrap;
+	display:block}
+
+textarea,input {
+	outline:none}
+
+textarea {
+	font-size:12px;
+	resize:none}
+
+a {
+	text-decoration:none;
+	text-overflow:ellipsis}
+
+a:hover {
+	cursor:pointer;
+	cursor:hand;
+	text-decoration:underline}
+
+img {
+	border-width:0}
+
+iframe {
+	border-style:none}
+

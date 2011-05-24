@@ -1,1 +1,697 @@
-body{background-image:url(../image/background.png)}iframe{overflow:hidden;width:100%}div#main{white-space:nowrap;width:960px;margin-left:auto;margin-right:auto;position:relative;background-repeat:no-repeat;background-position:300px 50px}div.document,div.leftContent,#hiddenDocument,div.songArtist,li.hiddenSection div.groupList ul,.hiddenInfo,.playing .play,.paused .pause,.collapsed,#toDelete,#artistList,#themeList{display:none}div.documentSelected pre{margin:0}div.documentSelected{padding:5px;margin-top:-1px;z-index:2}div.contentSelected{font-weight:normal}.contentHeader,.contentEditor,.contentBody{background:transparent;margin-bottom:3px;vertical-align:middle}.contentHeader{height:24px}.contentHeader select,.contentEditor select{border-style:none;font-size:0.8em}.contentHeader img:hover,.contentEditor img:hover,div.tab:hover,div.doc:hover,div.docClose:hover,.chordClose img:hover,.popupClose img:hover,.autoscrollContent .button:hover,.metronomeContent img:hover{cursor:pointer;cursor:hand}.contentEditor,.codeList{display:inline-table}.contentEditor{width:100%}.contentSection{display:table-row;margin-left:auto;margin-right:auto}span.infoTitle{text-align:right;vertical-align:top}.formEditor{display:table-row;vertical-align:top}.formEditor div{display:table-cell;float:left}.textareaInput{padding:3px;margin:2px}.textareaInput textarea{border-style:none}.contentBody{padding:3px;padding-top:6px;font-size:12px;overflow:auto}.tableRow{display:table-row}.tableCell{display:table-cell;padding:0 3px 3px 0}ul.infoList li.infoItem,.toolListContent{display:block;padding:3px;border-style:solid;border-width:1px}.infoTitle{width:100px}ul.infoList li.infoItem span{display:inline;padding:3px;float:left}#left,#center,.lyricsOnlyOption,.withChordsOption,.keywordInput,.filterList,.languageList,.tonalityList,.capoList,.instrumentList,.tuningList,.sizeList,.noteList,.chordList,.bassList,.key_d img,.key_e img,.key_g img,.key_a img,.key_b img,.autoscrollContent div,.metronomeContent div,#headTitle{float:left}#left{width:210px}#leftFixed{position:fixed;overflow:hidden;height:90%;width:210px}#itemList{overflow-y:auto;overflow-x:hidden;height:80%;position:relative;padding-top:3px;padding-bottom:3px;margin-top:2px}.menuList{position:relative;padding-top:3px;padding-bottom:3px;margin-top:2px}#center{margin-left:3px;display:block;width:710px}div.leftContentSelected{width:190px;margin-top:-1px;padding-left:-20px;padding:5px;z-index:2;height:93%;position:relative}.noteList,.bassList{width:7em}#search,#tool,#document{margin:0 5px 5px 5px}#wordInput{margin-top:2px;padding:2px;font-size:1em;background-image:url(../image/find.png);background-repeat:no-repeat;background-position:3px 3px}#word,#email,#password{border:solid 0px;background:transparent}#word{width:160px;margin-left:20px}#email,#password{width:100px;float:left;font-size:1em}#letter{white-space:normal}#letter li.optionItem{padding:0;margin:0}.wordEmpty{font-style:italic}#documentSerie{padding:0 5px 5px 5px;margin-top:1px}div.tabList{position:relative;z-index:3;overflow:hidden;width:697px;height:20px;padding:5px 0 0 5px}#center div.tabList{margin-top:3px}div.tab,div.tabSelected,div.doc,div.docSelected{float:left;vertical-align:middle;padding:2px;margin-right:5px}div.tab,div.doc{height:16px;z-index:0;opacity:0.4;filter:alpha(opacity=40)}div.tabSelected,div.docSelected{height:16px;font-weight:bold;z-index:3}#docAdd,#docHome{text-align:center;vertical-align:middle;float:left;border:none;opacity:1;filter:alpha(opacity=100)}div#docSerie{float:left;display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}div.docTitle{float:left;text-overflow:ellipsis;overflow:auto;white-space:nowrap}div.docClose{background-repeat:no-repeat;background-position:50% 50%;text-align:center;vertical-align:middle;width:16px;height:16px;float:right;margin-left:2px}ul#songList,ul#artistList{margin-top:0}ul#songList li.song,ul#artistList li.song,ul#lastAdded li.song,ul#lastModified li.song,ul#lastViewed li.song,ul#mostVisited li.song,.versionList{margin-bottom:0px;margin:1px;background-repeat:no-repeat;padding-left:15px}.en,.fr,.it,.es,.no,.la{background:url(../image/bullet.png);background-repeat:no-repeat;padding-left:15px}.en{background-position:0px -156px}.fr{background-position:0px -26px}.it{background-position:0px -52px}.es{background-position:0px -208px}.la{background-position:0px -130px}.no{background-position:0px -182px}li.plus,li.minus{background-image:url(../image/section.png)}li.plus{background-position:-8px -8px}li.minus{background-position:-8px -40px}a.documentTitleSelected{font-weight:bold}li.section,li.hiddenSection{background-position:3px 0%}li.section div.groupList{padding:0px 3px 3px 3px;margin:0;margin-top:-1px;margin-bottom:3px}div.groupTitle{height:15px;cursor:pointer;cursor:hand;background-repeat:no-repeat;padding-left:26px}#artistList div.groupTitle{background-image:url(../image/flag.png)}#themeList div.groupTitle{background-image:url(../image/folder.png);background-position:6px -2px}div.obe{background-position:6px 1px}div.oca{background-position:6px -20px}div.oes{background-position:6px -125px}div.ofr{background-position:6px -146px}div.omx{background-position:6px -188px}div.oqc{background-position:6px -209px}div.ouk{background-position:6px -230px}div.ous{background-position:6px -251px}div.oir{background-position:6px -167px}div.ocy{background-position:6px -62px}div.ode{background-position:6px -83px}div.owa{background-position:6px -272px}div.och{background-position:6px -41px}div.oeg{background-position:6px -106px}li.section div.groupList ul{padding:3px 0 3px 0}li.section ul li{margin-left:0}.expanded{display:block}div#popup{font-family:arial,verdana,helvetica,sans-serif;text-align:left;padding:0;margin:0;overflow:hidden;float:left;position:absolute;z-index:20px}div#popup ul{list-style:none;margin:0;padding:0}div#popup li:hover{overflow:hidden}.fingeringControl,tr.fretNumber td{text-align:center}.chord{position:relative;overflow:auto}.neck{overflow:auto;display:block;padding:3px;z-index:4}#popup ul.stringList{padding:3px;display:table}.row *{white-space:nowrap}.row,.rowOff{overflow:auto;padding:0;margin:0;height:12px;display:table-row;overflow:visible}.row td,.rowOff td{display:block;padding:0;margin:0;height:12px;display:table-cell}.note,.noteOff{width:15px;border-right:solid #000000 1px;text-align:center;padding:0;margin:0}.noteOff{background-image:url(../image/fretOff.png);background-repeat:no-repeat;background-position:50% 50%}table.keyList tr td{max-height:100px;min-height:100px;height:100px}.hidden{visibility:hidden}.key_db,.key_eb,.key_gb,.key_ab,.key_bb{width:15px;background-image:url(../image/sharp.png);vertical-align:middle;text-align:center}.key_c,.key_f{background-image:url(../image/nosharp.png);background-repeat:no-repeat;width:22px}.key_e,.key_b{width:20px}.key_d,.key_g,.key_a{width:15px}.key_c,.key_d,.key_e,.key_f,.key_g,.key_a,.key_b{vertical-align:bottom}.key_c img,.key_d img,.key_e img,.key_f img,.key_g img,.key_a img,.key_b img{margin-bottom:10px}.key_c img,.key_f img,.applyButton,.editButton,.printButton{float:right}.fret{border-left:solid #333333 1px;text-align:center;vertical-align:middle}.fret div{width:100%;padding:0;margin:0}.string{background-repeat:repeat-x;background-position:50% 50%;padding:0;margin:0}.string div.empty{color:transparent}.row .string{background-image:url(../image/string.gif)}.rowOff .string{background-image:url(../image/stringOff.gif)}.dot,.dotFinger,.dotNotFinger{background-repeat:no-repeat;background-position:50% 50%;font-family:helvetica}.dot{background-image:url(../image/dot.png)}.dotFinger{background-image:url(../image/dot_red.png)}.dotNotFinger{background-image:url(../image/dot_grey.png)}.pos1{width:40px}.pos2{width:38px}.pos3{width:36px}.pos4{width:34px}.pos5{width:32px}.pos6{width:30px}.pos7{width:28px}.pos8{width:27px}.pos9{width:25px}.pos10{width:24px}.pos11{width:22px}.pos12{width:21px}.pos13{width:20px}.pos14{width:19px}.pos15{width:18px}.pos16{width:17px}.pos17{width:16px}.pos18{width:15px}.pos19{width:14px}.pos20{width:13px}.popupBody{padding:5px}.chordHeader,.popupHeader{overflow:hidden;font-family:verdana,arial,helvetica,sans-serif;font-weight:bold;vertical-align:middle}.chordTab,.popupTab{overflow:hidden;float:left;padding:2px;vertical-align:middle;height:15px}.chordTitle,.popupTitle{float:left;vertical-align:middle}.chordClose,.popupClose{float:left;text-align:center;vertical-align:middle;width:16px;height:16px;margin-left:2px}.chordFooter{padding:0 3px 3px 3px}.chordSection{overflow:hidden;padding:2px;height:15px}.sectionTitle,.sectionList{float:left;height:10px}.sectionList li{float:left;margin-left:10px}#toolList li{margin-left:10px}.toolListContent{margin-right:5px}.autoscrollContent,.metronomeContent{height:25px;vertical-align:middle;padding-left:5px;padding-bottom:3px;padding-top:3px}.indicator{margin:3px}.autoscrollContent .button:hover,.metronomeContent img:hover{cursor:pointer}.playing .pause,.paused .play{display:inline}.percent{width:100px;border:1px solid #FFFFFF;height:18px;cursor:crosshair}.bar{background-image:url(../image/bar.png);background-repeat:no-repeat;height:16px;color:#000000;text-align:right}#bpm{width:35px;padding:2px 2px 2px 5px;border:none}#metronomeLight{width:20px;height:20px}#metronomeLight img{margin:auto}#connection{float:right;padding:2px;height:24px}#connection img,#connection div{float:left;margin-right:2px}#connectionBtn{float:left;overflow:auto}.applyButton{background-image:url(../image/check.png)}.newButton{background-image:url(../image/new.png)}.viewButton{background-image:url(../image/view.png)}.editButton{background-image:url(../image/edit.png)}.printButton{background-image:url(../image/printer.png)}.button{background-repeat:no-repeat;background-position:5px 50%}.button span{padding-left:20px}
+body {
+	background-image:url(../image/background.png)}
+
+iframe {
+	overflow:hidden;
+	width:100%}
+
+#main {
+	white-space:nowrap;
+	width:960px;
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+	background-repeat:no-repeat;
+	background-position:300px 50px}
+
+div.document,div.leftContent,#hiddenDocument,div.songArtist,li.hiddenSection div.groupList ul,.hiddenInfo,.playing .play,.paused .pause,.collapsed,#toDelete,#artistList,#themeList {
+	display:none}
+
+div.documentSelected pre {
+	margin:0}
+
+div.documentSelected {
+	padding:5px;
+	margin-top:-1px;
+	z-index:2}
+
+div.contentSelected {
+	font-weight:normal}
+
+.contentHeader,.contentEditor,.contentBody {
+	background:transparent;
+	margin-bottom:3px;
+	vertical-align:middle}
+
+.contentHeader {
+	height:24px}
+
+.contentHeader select,.contentEditor select {
+	border-style:none;
+	font-size:0.8em}
+
+.contentHeader img:hover,.contentEditor img:hover,div.tab:hover,div.doc:hover,div.docClose:hover,.chordClose img:hover,.popupClose img:hover,.autoscrollContent .button:hover,.metronomeContent img:hover {
+	cursor:pointer;
+	cursor:hand}
+
+.contentEditor,.codeList {
+	display:inline-table}
+
+.contentEditor {
+	width:100%}
+
+.contentSection {
+	display:table-row;
+	margin-left:auto;
+	margin-right:auto}
+
+span.infoTitle {
+	text-align:right;
+	vertical-align:top}
+
+.formEditor {
+	display:table-row;
+	vertical-align:top}
+
+.formEditor div {
+	display:table-cell;
+	float:left}
+
+.textareaInput {
+	padding:3px;
+	margin:2px}
+
+.textareaInput textarea {
+	border-style:none}
+
+.contentBody {
+	padding:3px;
+	padding-top:6px;
+	font-size:12px;
+	overflow:auto}
+
+.tableRow {
+	display:table-row}
+
+.tableCell {
+	display:table-cell;
+	padding:0 3px 3px 0}
+
+ul.infoList li.infoItem,.toolListContent {
+	display:block;
+	padding:3px;
+	border-style:solid;
+	border-width:1px}
+
+.infoTitle {
+	width:100px}
+
+ul.infoList li.infoItem span {
+	display:inline;
+	padding:3px;
+	float:left}
+
+#left,#center,.lyricsOnlyOption,.withChordsOption,.keywordInput,.filterList,.languageList,.tonalityList,.capoList,.instrumentList,.tuningList,.sizeList,.noteList,.chordList,.bassList,.key_d img,.key_e img,.key_g img,.key_a img,.key_b img,.autoscrollContent div,.metronomeContent div,#headTitle {
+	float:left}
+
+#left {
+  bottom: 0;
+  padding-top: 20px;
+  position: fixed;
+  top: 0;
+  width: 210px;
+}
+
+#leftFixed {
+  float: left;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+#search {
+  height: 100%;
+}
+
+#itemList {
+	overflow-y:auto;
+	overflow-x:hidden;
+
+	position:relative;
+	padding-top:3px;
+	padding-bottom:3px;
+	margin-top:2px
+}
+
+.menuList {
+	position:relative;
+	padding-top:3px;
+	padding-bottom:3px;
+	margin-top:2px}
+
+#center {
+	margin-left:3px;
+	display:block;
+	min-width:320px;
+  position: absolute;
+  left: 200px;
+}
+
+div.leftContentSelected {
+	width:190px;
+	margin-top:-1px;
+	padding-left:-20px;
+	padding:5px;
+	z-index:2;
+	height:93%;
+	position:relative}
+
+.noteList,.bassList {
+	width:7em}
+
+#search,#tool,#document {
+	margin:0 5px 5px 5px}
+
+#wordInput {
+	margin-top:2px;
+	padding:2px;
+	font-size:1em;
+	background-image:url(../image/find.png);
+	background-repeat:no-repeat;
+	background-position:3px 3px}
+
+#word,#email,#password {
+	border:solid 0px;
+	background:transparent}
+
+#word {
+	width:160px;
+	margin-left:20px}
+
+#email,#password {
+	width:100px;
+	float:left;
+	font-size:1em}
+
+#letter {
+	white-space:normal}
+
+#letter li.optionItem {
+	padding:0;
+	margin:0}
+
+#documentSerie {
+	padding:0 5px 5px 5px;
+	margin-top:1px}
+
+div.tabList {
+	position:relative;
+	z-index:3;
+	overflow:hidden;
+	width:697px;
+	height:20px;
+	padding:5px 0 0 5px}
+
+#center div.tabList {
+	margin-top:3px}
+
+div.tab,div.tabSelected,div.doc,div.docSelected {
+	float:left;
+	vertical-align:middle;
+	padding:2px;
+	margin-right:5px}
+
+div.tab,div.doc {
+	height:16px;
+	z-index:0;
+	opacity:0.4;
+	filter:alpha(opacity=40)}
+
+div.tabSelected,div.docSelected {
+	height:16px;
+	font-weight:bold;
+	z-index:3}
+
+#docAdd,#docHome {
+	text-align:center;
+	vertical-align:middle;
+	float:left;
+	border:none;
+	opacity:1;
+	filter:alpha(opacity=100)}
+
+div#docSerie {
+	float:left;
+	display:block;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis}
+
+div.docTitle {
+	float:left;
+	text-overflow:ellipsis;
+	overflow:auto;
+	white-space:nowrap}
+
+div.docClose {
+	background-repeat:no-repeat;
+	background-position:50% 50%;
+	text-align:center;
+	vertical-align:middle;
+	width:16px;
+	height:16px;
+	float:right;
+	margin-left:2px}
+
+ul#songList,ul#artistList {
+	margin-top:0}
+
+ul#songList li.song,ul#artistList li.song,ul#lastAdded li.song,ul#lastModified li.song,ul#lastViewed li.song,ul#mostVisited li.song,.versionList {
+	margin-bottom:0px;
+	margin:1px;
+	background-repeat:no-repeat;
+	padding-left:15px}
+
+.en,.fr,.it,.es,.no,.la {
+	background:url(../image/bullet.png);
+	background-repeat:no-repeat;
+	padding-left:15px}
+
+.en {
+	background-position:0px -156px}
+
+.fr {
+	background-position:0px -26px}
+
+.it {
+	background-position:0px -52px}
+
+.es {
+	background-position:0px -208px}
+
+.la {
+	background-position:0px -130px}
+
+.no {
+	background-position:0px -182px}
+
+li.plus,li.minus {
+	background-image:url(../image/section.png)}
+
+li.plus {
+	background-position:-8px -8px}
+
+li.minus {
+	background-position:-8px -40px}
+
+a.documentTitleSelected {
+	font-weight:bold}
+
+li.section,li.hiddenSection {
+	background-position:3px 0%}
+
+li.section div.groupList {
+	padding:0px 3px 3px 3px;
+	margin:0;
+	margin-top:-1px;
+	margin-bottom:3px}
+
+div.groupTitle {
+	height:15px;
+	cursor:pointer;
+	cursor:hand;
+	background-repeat:no-repeat;
+	padding-left:26px}
+
+#artistList div.groupTitle {
+	background-image:url(../image/flag.png)}
+
+#themeList div.groupTitle {
+	background-image:url(../image/folder.png);
+	background-position:6px -2px}
+
+div.obe {
+	background-position:6px 1px}
+
+div.oca {
+	background-position:6px -20px}
+
+div.oes {
+	background-position:6px -125px}
+
+div.ofr {
+	background-position:6px -146px}
+
+div.omx {
+	background-position:6px -188px}
+
+div.oqc {
+	background-position:6px -209px}
+
+div.ouk {
+	background-position:6px -230px}
+
+div.ous {
+	background-position:6px -251px}
+
+div.oir {
+	background-position:6px -167px}
+
+div.ocy {
+	background-position:6px -62px}
+
+div.ode {
+	background-position:6px -83px}
+
+div.owa {
+	background-position:6px -272px}
+
+div.och {
+	background-position:6px -41px}
+
+div.oeg {
+	background-position:6px -106px}
+
+li.section div.groupList ul {
+	padding:3px 0 3px 0}
+
+li.section ul li {
+	margin-left:0}
+
+.expanded {
+	display:block}
+
+div#popup {
+	font-family:arial,verdana,helvetica,sans-serif;
+	text-align:left;
+	padding:0;
+	margin:0;
+	overflow:hidden;
+	float:left;
+	position:absolute;
+	z-index:20px}
+
+div#popup ul {
+	list-style:none;
+	margin:0;
+	padding:0}
+
+div#popup li:hover {
+	overflow:hidden}
+
+.fingeringControl,tr.fretNumber td {
+	text-align:center}
+
+.chord {
+	position:relative;
+	overflow:auto}
+
+.neck {
+	overflow:auto;
+	display:block;
+	padding:3px;
+	z-index:4}
+
+#popup ul.stringList {
+	padding:3px;
+	display:table}
+
+.row * {
+	white-space:nowrap}
+
+.row,.rowOff {
+	overflow:auto;
+	padding:0;
+	margin:0;
+	height:12px;
+	display:table-row;
+	overflow:visible}
+
+.row td,.rowOff td {
+	display:block;
+	padding:0;
+	margin:0;
+	height:12px;
+	display:table-cell}
+
+.note,.noteOff {
+	width:15px;
+	border-right:solid #000000 1px;
+	text-align:center;
+	padding:0;
+	margin:0}
+
+.noteOff {
+	background-image:url(../image/fretOff.png);
+	background-repeat:no-repeat;
+	background-position:50% 50%}
+
+table.keyList tr td {
+	max-height:100px;
+	min-height:100px;
+	height:100px}
+
+.hidden {
+	visibility:hidden}
+
+.key_db,.key_eb,.key_gb,.key_ab,.key_bb {
+	width:15px;
+	background-image:url(../image/sharp.png);
+	vertical-align:middle;
+	text-align:center}
+
+.key_c,.key_f {
+	background-image:url(../image/nosharp.png);
+	background-repeat:no-repeat;
+	width:22px}
+
+.key_e,.key_b {
+	width:20px}
+
+.key_d,.key_g,.key_a {
+	width:15px}
+
+.key_c,.key_d,.key_e,.key_f,.key_g,.key_a,.key_b {
+	vertical-align:bottom}
+
+.key_c img,.key_d img,.key_e img,.key_f img,.key_g img,.key_a img,.key_b img {
+	margin-bottom:10px}
+
+.key_c img,.key_f img,.applyButton,.editButton,.printButton {
+	float:right}
+
+.fret {
+	border-left:solid #333333 1px;
+	text-align:center;
+	vertical-align:middle}
+
+.fret div {
+	width:100%;
+	padding:0;
+	margin:0}
+
+.string {
+	background-repeat:repeat-x;
+	background-position:50% 50%;
+	padding:0;
+	margin:0}
+
+.string div.empty {
+	color:transparent}
+
+.row .string {
+	background-image:url(../image/string.gif)}
+
+.rowOff .string {
+	background-image:url(../image/stringOff.gif)}
+
+.dot,.dotFinger,.dotNotFinger {
+	background-repeat:no-repeat;
+	background-position:50% 50%;
+	font-family:helvetica}
+
+.dot {
+	background-image:url(../image/dot.png)}
+
+.dotFinger {
+	background-image:url(../image/dot_red.png)}
+
+.dotNotFinger {
+	background-image:url(../image/dot_grey.png)}
+
+.pos1 {
+	width:40px}
+
+.pos2 {
+	width:38px}
+
+.pos3 {
+	width:36px}
+
+.pos4 {
+	width:34px}
+
+.pos5 {
+	width:32px}
+
+.pos6 {
+	width:30px}
+
+.pos7 {
+	width:28px}
+
+.pos8 {
+	width:27px}
+
+.pos9 {
+	width:25px}
+
+.pos10 {
+	width:24px}
+
+.pos11 {
+	width:22px}
+
+.pos12 {
+	width:21px}
+
+.pos13 {
+	width:20px}
+
+.pos14 {
+	width:19px}
+
+.pos15 {
+	width:18px}
+
+.pos16 {
+	width:17px}
+
+.pos17 {
+	width:16px}
+
+.pos18 {
+	width:15px}
+
+.pos19 {
+	width:14px}
+
+.pos20 {
+	width:13px}
+
+.popupBody {
+	padding:5px}
+
+.chordHeader,.popupHeader {
+	overflow:hidden;
+	font-family:verdana,arial,helvetica,sans-serif;
+	font-weight:bold;
+	vertical-align:middle}
+
+.chordTab,.popupTab {
+	overflow:hidden;
+	float:left;
+	padding:2px;
+	vertical-align:middle;
+	height:15px}
+
+.chordTitle,.popupTitle {
+	float:left;
+	vertical-align:middle}
+
+.chordClose,.popupClose {
+	float:left;
+	text-align:center;
+	vertical-align:middle;
+	width:16px;
+	height:16px;
+	margin-left:2px}
+
+.chordFooter {
+	padding:0 3px 3px 3px}
+
+.chordSection {
+	overflow:hidden;
+	padding:2px;
+	height:15px}
+
+.sectionTitle,.sectionList {
+	float:left;
+	height:10px}
+
+.sectionList li {
+	float:left;
+	margin-left:10px}
+
+#toolList li {
+	margin-left:10px}
+
+.toolListContent {
+	margin-right:5px}
+
+.autoscrollContent,.metronomeContent {
+	height:25px;
+	vertical-align:middle;
+	padding-left:5px;
+	padding-bottom:3px;
+	padding-top:3px}
+
+.indicator {
+	margin:3px}
+
+.autoscrollContent .button:hover,.metronomeContent img:hover {
+	cursor:pointer}
+
+.playing .pause,.paused .play {
+	display:inline}
+
+.percent {
+	width:100px;
+	border:1px solid #FFFFFF;
+	height:18px;
+	cursor:crosshair}
+
+.bar {
+	background-image:url(../image/bar.png);
+	background-repeat:no-repeat;
+	height:16px;
+	color:#000000;
+	text-align:right}
+
+#bpm {
+	width:35px;
+	padding:2px 2px 2px 5px;
+	border:none}
+
+#metronomeLight {
+	width:20px;
+	height:20px}
+
+#metronomeLight img {
+	margin:auto}
+
+#connection {
+	float:right;
+	padding:2px;
+	height:24px}
+
+#connection img,#connection div {
+	float:left;
+	margin-right:2px}
+
+#connectionBtn {
+	float:left;
+	overflow:auto}
+
+.applyButton {
+	background-image:url(../image/check.png)}
+
+.newButton {
+	background-image:url(../image/new.png)}
+
+.viewButton {
+	background-image:url(../image/view.png)}
+
+.editButton {
+	background-image:url(../image/edit.png)}
+
+.printButton {
+	background-image:url(../image/printer.png)}
+
+.button {
+	background-repeat:no-repeat;
+	background-position:5px 50%}
+
+.button span {
+	padding-left:20px}
+

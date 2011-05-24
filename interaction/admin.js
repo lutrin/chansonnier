@@ -547,8 +547,8 @@ var _a = {
       });
       template = _c.ajaxList.template.choose.replace(/###list###/g, "<li id='album_" + list.join("</li><li id='album_") + "</li>");
       template = template.replace(/###title###/g, "Liste d'albums");
-      _c.modalWindow.content = template;
-      _c.modalWindow.open();
+      modalWindow.content = template;
+      modalWindow.open();
       $("#chooseList > li").click(_a.albumItemClick);
       return false;
     });
@@ -571,8 +571,8 @@ var _a = {
       });
       template = _c.ajaxList.template.choose.replace(/###list###/g, "<li id='" + list.join("</li><li id='") + "</li>");
       template = template.replace(/###title###/g, params.title);
-      _c.modalWindow.content = template;
-      _c.modalWindow.open();
+      modalWindow.content = template;
+      modalWindow.open();
       $("#chooseList > li").click(function (event) {
         return _a["append_" + params.id](this, params.context);
       });
@@ -659,8 +659,8 @@ var _a = {
       });
       template = _c.ajaxList.template.choose.replace(/###list###/g, "<li id='song_" + list.join("</li><li id='song_") + "</li>");
       template = template.replace(/###title###/g, "Liste de chansons");
-      _c.modalWindow.content = template;
-      _c.modalWindow.open();
+      modalWindow.content = template;
+      modalWindow.open();
       $("#chooseList > li").click(_a.compositionItemClick);
       return false;
     });
@@ -685,8 +685,8 @@ var _a = {
       });
       template = _c.ajaxList.template.choose.replace(/###list###/g, "<li id='version_" + list.join("</li><li id='version_") + "</li>");
       template = template.replace(/###title###/g, "Liste de chansons");
-      _c.modalWindow.content = template;
-      _c.modalWindow.open();
+      modalWindow.content = template;
+      modalWindow.open();
       $("#chooseList > li").click(_a.interpretationItemClick);
       return false;
     });
@@ -711,8 +711,8 @@ var _a = {
       });
       template = _c.ajaxList.template.choose.replace(/###list###/g, "<li id='song_" + list.join("</li><li id='song_") + "</li>");
       template = template.replace(/###title###/g, "Liste de chansons");
-      _c.modalWindow.content = template;
-      _c.modalWindow.open();
+      modalWindow.content = template;
+      modalWindow.open();
       $("#chooseList > li").click(_a.categoryItemClick);
       return false;
     });
