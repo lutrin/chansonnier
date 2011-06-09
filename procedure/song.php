@@ -92,7 +92,7 @@ class song extends data {
     $itemId = $song["id"];
     $html = "versionList plus"
           . ( is_numeric( substr( $itemId, 0, 1 ) )? " numeric": "" )
-          . "'><a name='$itemId' class='documentTitle'>{$song['name']}</a><ul id='version_$itemId' class='collapsed'><li id='";
+          . "'><a href='#$itemId' name='$itemId' class='documentTitle'>{$song['name']}</a><ul id='version_$itemId' class='collapsed'><li id='";
     $versionList = array();
     $versions = is_array( $song["version"] )? $song["version"]: array( $song["version"] );
     foreach( $versions as $version ) {
@@ -107,7 +107,7 @@ class song extends data {
     $itemId = $song["id"];
     return "song {$song['language']}"
          . ( is_numeric( substr( $itemId, 0, 1 ) ) ? " numeric" : "" )
-         . "'><a name='{$song['id']}' class='documentTitle'>{$song['name']}</a>";
+         . "'><a href='#{$song['id']}' name='{$song['id']}' class='documentTitle'>{$song['name']}</a>";
   }
 
   /****************************************************************************/

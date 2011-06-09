@@ -99,6 +99,10 @@ var _m = {
   load: function () {
     var tabList = ["search", "tool", "document"],
         word, loadLeftContent, resetValue;
+        
+    // debug mode
+    $( "html" ).addClass( "holmes-debug" );
+        
     _c.callAjax([{
       folder: "procedure",
       name: "getSongList"

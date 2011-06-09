@@ -16,7 +16,7 @@
     return Dat_song.length;
   },
   buildVersionList: function (songItem) {
-    var html = "versionList plus" + (_c.isNumeric(songItem.id.substr(0, 1)) ? " numeric" : "") + "'><a name='" + songItem.id + "' class='documentTitle'>" + songItem.name + "</a><ul id='version_" + songItem.id + "' class='collapsed'><li id='",
+    var html = "versionList plus" + (_c.isNumeric(songItem.id.substr(0, 1)) ? " numeric" : "") + "'><a href='#" + songItem.id + "' name='" + songItem.id + "' class='documentTitle'>" + songItem.name + "</a><ul id='version_" + songItem.id + "' class='collapsed'><li id='",
         versionList = [],
         iVersion = 0,
         l;
@@ -38,7 +38,7 @@
     });
   },
   buildSong: function (songItem) {
-    return "song " + songItem.language + (_c.isNumeric(songItem.id.substr(0, 1)) ? " numeric" : "") + "'><a name='" + songItem.id + "' class='documentTitle'>" + songItem.name + "</a>";
+    return "song " + songItem.language + (_c.isNumeric(songItem.id.substr(0, 1)) ? " numeric" : "") + "'><a href='#" + songItem.id + "' name='" + songItem.id + "' class='documentTitle'>" + songItem.name + "</a>";
   },
   prepareSongResult: function (ulSongList)  {
     ulSongList.removeClass("empty").click(function (event) {
