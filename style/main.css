@@ -107,16 +107,21 @@ ul.infoList li.infoItem span {
 }
 
 #itemList {
-  position: relative;
+  position: absolute;
+  margin-top: 2px;
+  width:200px;
+  top: 92px;
+  bottom: 20px;
+  overflow-y: scroll;
 }
 
-#itemList > ul {
+/*#itemList > ul {
   overflow-y: auto;
   overflow-y: hidden;
   position: absolute;
   top: 0;
   bottom: 0;
-}
+}*/
 
 .menuList {
 	position:relative;
@@ -125,11 +130,9 @@ ul.infoList li.infoItem span {
 	margin-top:2px}
 
 #center {
-	margin-left:3px;
-	display:block;
-	min-width:320px;
+  left: 205px;
+  right: 0;
   position: absolute;
-  left: 200px;
 }
 
 div.leftContentSelected {
@@ -153,10 +156,10 @@ div.leftContentSelected {
   width: 200px;
 }
   
-#searchBy, #wordInput {
+/*#searchBy, #wordInput {
   position: absolute;
-  width: 196px;
-}
+}*/
+
 
 #wordInput {
   top: 25px;
@@ -171,7 +174,8 @@ div.leftContentSelected {
 	font-size:1em;
 	background-image:url(../image/find.png);
 	background-repeat:no-repeat;
-	background-position:3px 3px}
+	/*background-position:3px 3px*/
+}
 
 #word,#email,#password {
 	border:solid 0px;

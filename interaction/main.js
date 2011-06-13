@@ -101,7 +101,7 @@ var _m = {
         word, loadLeftContent, resetValue;
         
     // debug mode
-    $( "html" ).addClass( "holmes-debug" );
+    //$( "html" ).addClass( "holmes-debug" );
         
     _c.callAjax([{
       folder: "procedure",
