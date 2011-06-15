@@ -50,3 +50,15 @@ img {
 iframe {
 	border-style:none}
 
+header {
+  overflow: hidden;
+  white-space:nowrap;
+}
+
+h2 {
+  font-size: 1.3em;
+}
+
+h2 {
+  font-size: 1.2em;
+}

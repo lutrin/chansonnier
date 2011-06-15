@@ -1,1 +1,102 @@
-.optionItemList{padding:5px;margin:0}.choiceList .choiceSubList .optionItemList .optionItem{position:relative;z-index:100}.choiceList:hover .choiceSubList .optionItemList .optionItem{display:block;float:none;text-align:left}.choiceList .choiceSubList .optionItemList{padding:4px;display:none;position:absolute;left:-5px;top:2px;width:100%;z-index:100;border-left-style:solid;border-left-width:1px;border-right-style:solid;border-right-width:1px;border-bottom-style:solid;border-bottom-width:1px}.choiceList:hover .choiceSubList .optionItemList,.vertical .optionItem{display:block}.choiceListValue,.hiddenValue{display:none}.optionItem{display:inline;margin:1px;padding:0px 3px 0px 3px;border-width:1px;border-style:solid}.optionItem:hover{border-width:1px;border-style:dashed;padding:0px 3px 0px 3px;cursor:pointer;cursor:hand}.checked{font-weight:bold;text-shadow:0px 3px 3px #ffffff}.choiceList{display:inline;padding:4px;margin-left:2px;border-style:solid;border-width:1px;height:14px}.choiceListDisplay{font-weight:bold}.choiceList .choiceSubList{position:relative;width:100%}.textInput{display:inline;padding:1px;font-size:1em;margin:1px}.textInput input{border:0 solid}.button{margin:1px;padding:4px}.button:hover{cursor:pointer;cursor:hand}.button span{font-weight:bold;text-shadow:0 -1px 1px rgba(0,0,0,0.25)}
+.optionItemList {
+margin:0;
+padding:5px;
+}
+
+.choiceList .choiceSubList .optionItemList .optionItem {
+position:relative;
+z-index:100;
+}
+
+.choiceList:hover .choiceSubList .optionItemList .optionItem {
+display:block;
+float:none;
+text-align:left;
+}
+
+.choiceList .choiceSubList .optionItemList {
+display:none;
+position:absolute;
+left:-5px;
+top:2px;
+width:100%;
+z-index:100;
+border-left-style:solid;
+border-left-width:1px;
+border-right-style:solid;
+border-right-width:1px;
+border-bottom-style:solid;
+border-bottom-width:1px;
+padding:4px;
+}
+
+.choiceList:hover .choiceSubList .optionItemList,.vertical .optionItem {
+display:block;
+z-index: 2;
+}
+
+.choiceListValue,.hiddenValue {
+display:none;
+}
+
+.optionItem {
+display:inline;
+border-style:solid;
+border-width:1px;
+margin:1px;
+padding:0 3px;
+}
+
+.optionItem:hover {
+cursor:hand;
+border-style:dashed;
+border-width:1px;
+padding:0 3px;
+}
+
+.checked {
+font-weight:700;
+text-shadow:0 3px 3px #fff;
+}
+
+.choiceList {
+display:inline;
+margin-left:2px;
+border-style:solid;
+border-width:1px;
+padding:4px;
+}
+
+.choiceListDisplay {
+font-weight:700;
+}
+
+.choiceList .choiceSubList {
+position:relative;
+width:100%;
+}
+
+.textInput {
+display:inline;
+font-size:1em;
+margin:1px;
+padding:1px;
+}
+
+.textInput input {
+border:0 solid;
+}
+
+.button {
+margin:1px;
+padding:4px;
+}
+
+.button:hover {
+cursor:hand;
+}
+
+.button span {
+font-weight:700;
+text-shadow:0 -1px 1px rgba(0,0,0,0.25);
+}

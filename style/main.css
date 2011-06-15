@@ -16,20 +16,22 @@ div.documentSelected pre {
 	margin:0}
 
 div.documentSelected {
-	padding:5px;
-	margin-top:-1px;
-	z-index:2}
+	padding:2px;
+}
 
 div.contentSelected {
 	font-weight:normal}
 
-.contentHeader,.contentEditor,.contentBody {
+.contentHeader,.contentEditor {
 	background:transparent;
-	margin-bottom:3px;
-	vertical-align:middle}
+	margin-bottom:2px;
+	vertical-align:middle
+  }
 
 .contentHeader {
-	height:24px}
+	height:22px;
+  overflow: hidden;
+}
 
 .contentHeader select,.contentEditor select {
 	border-style:none;
@@ -102,7 +104,7 @@ ul.infoList li.infoItem span {
 #left {
   bottom: 0;
   position: fixed;
-  top: 20px;
+  top: 25px;
   width: 200px;
 }
 
@@ -132,6 +134,7 @@ ul.infoList li.infoItem span {
 #center {
   left: 205px;
   right: 0;
+  top: 0;
   position: absolute;
 }
 
@@ -197,10 +200,6 @@ div.leftContentSelected {
 	padding:0;
 	margin:0}
 
-#documentSerie {
-	padding:0 5px 5px 5px;
-	margin-top:1px}
-
 div.tabList {
 	overflow:hidden;
 	height:20px;
@@ -209,9 +208,6 @@ div.tabList {
 #left > .tabList {
   position: absolute;
 }
-
-#center div.tabList {
-	margin-top:3px}
 
 div.tab,div.tabSelected,div.doc,div.docSelected {
 	float:left;
