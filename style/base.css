@@ -55,10 +55,18 @@ header {
   white-space:nowrap;
 }
 
+header > * {
+  display: inline;
+}
+
+header > h1 {
+  width: 200px;
+}
+
 h2 {
   font-size: 1.3em;
 }
 
-h2 {
+h3 {
   font-size: 1.2em;
 }

@@ -200,7 +200,8 @@
     objectText.observeList.push({
       "class": "printButton",
       callback: function () {
-        return _c.callAjax([{ folder: "template",
+        $( "body" ).addClass( "fullScreen" );
+        /*return _c.callAjax([{ folder: "template",
           name: "preview"
         }], function (ajaxItem) {
           var contentBody = _m.getSelectedItem("content").children(".contentBody:first").html(),
@@ -210,7 +211,7 @@
           printPreview.document.write(htmlPreview);
           printPreview.document.close();
           return false;
-        });
+        });*/
       }
     });
     option = {

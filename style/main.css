@@ -696,4 +696,13 @@ table.keyList tr td {
 .button span {
 	padding-left:20px}
 
-*/
+/* fullScreen */
+.fullScreen #left,
+.fullScreen #center .tabList,
+.fullScreen .contentHeader {
+  display: none;
+}
+
+.fullScreen #center {
+  left: 0;
+}
