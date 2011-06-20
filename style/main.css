@@ -706,3 +706,31 @@ table.keyList tr td {
 .fullScreen #center {
   left: 0;
 }
+
+  .fullScreen .contentBody { 
+    font-size: 16px;
+  } 
+
+@media screen and (max-width: 807px) { 
+  .fullScreen .contentBody { 
+    font-size: 14px;
+  } 
+}
+  
+@media screen and (max-width: 647px) { 
+  .fullScreen .contentBody { 
+    font-size: 12px;
+  } 
+}
+
+@media screen and (max-width: 567px) { 
+  .fullScreen .contentBody { 
+    font-size: 10px;
+  } 
+}
+
+@media screen and (max-width: 487px) { 
+  .fullScreen .contentBody { 
+    font-size: 8px;
+  } 
+}
