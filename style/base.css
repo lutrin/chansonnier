@@ -32,6 +32,7 @@ textarea,input {
 	outline:none}
 
 textarea {
+  font-family:monospace,"Courier New";
 	font-size:12px;
 	resize:none}
 

@@ -91,7 +91,7 @@ var _m = {
     ajaxItem.prepareSongResult( _c.select( "#songList" ) );
     _c.eachItem(["lastAdded", "lastModified", "lastViewed", "mostVisited"], function (songListItem) {
       ajaxItem.prepareSongResult( _c.select( "#" + songListItem ) );
-      return false;
+      return _m.writeQty();
     });
   },
   

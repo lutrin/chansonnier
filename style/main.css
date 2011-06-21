@@ -19,8 +19,10 @@ div.documentSelected {
 	padding:2px;
 }
 
-div.contentSelected {
-	font-weight:normal}
+.contentSelected {
+	font-weight:normal;
+  position: relative;
+}
 
 .contentHeader,.contentEditor {
 	background:transparent;
@@ -117,13 +119,11 @@ ul.infoList li.infoItem span {
   overflow-y: scroll;
 }
 
-/*#itemList > ul {
-  overflow-y: auto;
-  overflow-y: hidden;
+#itemQty {
   position: absolute;
-  top: 0;
-  bottom: 0;
-}*/
+  bottom: 5px;
+  left: 5px;
+}
 
 .menuList {
 	position:relative;
@@ -152,7 +152,7 @@ div.leftContentSelected {
 	height:93%;
 	position:relative}*/
 
-#search {
+#search, #tool, #document {
   position: absolute;
   top: 20px;
   bottom: 0;
