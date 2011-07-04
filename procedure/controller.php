@@ -95,11 +95,12 @@ function displayMain() {
                       "style/color.css",
                       "style/form.css",
                       "style/text.css",
-                      "style/rounded.css" );
+                      "style/rounded.css",
+                      "style/mobile.css" );
   $stylesheet = "<link rel='stylesheet' href='" . join( "' /><link rel='stylesheet' href='", $styleList ) . "' />";
 
   # get script TODO merge
-  $scriptList = array( "../external/interaction/jquery-1.6.1.min.js",
+  $scriptList = array( "../external/interaction/jquery-1.6.2.min.js",
                        "../external/interaction/jquery-ui-1.8.11.custom.min.js",
                        "../library/interaction/common.js",
                        "interaction/main.js" );

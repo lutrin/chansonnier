@@ -707,20 +707,22 @@ table.keyList tr td {
   left: 0;
 }
 
-  .fullScreen .contentBody { 
-    font-size: 16px;
-  } 
-
-@media screen and (max-width: 807px) { 
-  .fullScreen .contentBody { 
-    font-size: 14px;
-  } 
+.fullScreen .contentBody { 
+  font-size: 12px;
 }
-  
-@media screen and (max-width: 647px) { 
-  .fullScreen .contentBody { 
-    font-size: 12px;
-  } 
+
+@media screen and (max-width: 772px) {
+  #left, #search, #tool, #document, #left > .tabList, #itemList {
+    position: static;
+  }
+
+  #left, #search, #tool, #document {
+    width: 100%;
+  }
+
+  #center {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 567px) { 
