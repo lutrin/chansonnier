@@ -736,3 +736,17 @@ table.keyList tr td {
     font-size: 8px;
   } 
 }
+
+@media print {
+  header {
+    display: none;
+  }
+  
+  .contentBody  p {
+    page-break-after: avoid;
+  }
+  
+  .contentBody  p.break {
+    page-break-after: auto;
+  }
+}

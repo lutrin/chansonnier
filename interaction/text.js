@@ -87,8 +87,8 @@
       _c.eachItem(replaceList, replacing);
       this.text += "</p>";
       replaceList = [
-        [/[<]p[>][<][\/]p[>]/g, "<p> </p>"],
-        [/\s/g, "&nbsp;"]
+        [/\s/g, "&nbsp;"],
+        [/[<]p[>][<][\/]p[>]/g, "<p class='break'>&nbsp;</p>"]
       ];
       _c.eachItem(replaceList, replacing);
       composerText = "";
