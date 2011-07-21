@@ -33,11 +33,11 @@ var _a = {
         folder: "template",
         name: "editSongDetail"
       }], function (html) {
-        _c.eachItem([/###songId###/g, /###songName###/g, /###versionId###/g, /###versionName###/g, /###text###/g, /###cheat###/g, /###composerList###/g, /###interpreterList###/g], function (replaceItem) {
+        _c.eachItem([/{songId}/g, /{songName}/g, /{versionId}/g, /{versionName}/g, /{text}/g, /{cheat}/g, /{composerList}/g, /{interpreterList}/g], function (replaceItem) {
           html = html.replace(replaceItem, "");
           return false;
         });
-        _c.select("#detail").html(html.replace(/###head###/g, "Ajout d'une chanson"));
+        _c.select("#detail").html(html.replace(/{head}/g, "Ajout d'une chanson"));
         $("#newVersion").click(function (event) {
           $("#mode").val("add");
         });
@@ -70,11 +70,11 @@ var _a = {
         name: "editArtistDetail"
       }], function (ajaxItem) {
         var html = ajaxItem;
-        _c.eachItem([/###artistId###/g, /###artistName###/g, /###memberList###/g, /###groupList###/g, /###compositionList###/g, /###interpretationList###/g], function (replaceItem) {
+        _c.eachItem([/{artistId}/g, /{artistName}/g, /{memberList}/g, /{groupList}/g, /{compositionList}/g, /{interpretationList}/g], function (replaceItem) {
           html = html.replace(replaceItem, "");
           return false;
         });
-        _c.select("#detail").html(html.replace(/###head###/g, "Ajout d'un artiste"));
+        _c.select("#detail").html(html.replace(/{head}/g, "Ajout d'un artiste"));
         _c.eachItem(["Member", "Group", "Composition", "Interpretation"], function (context) {
           $("#choose" + context).click(_a["choose" + context + "Click"]);
           return false;
@@ -107,11 +107,11 @@ var _a = {
         name: "editAlbumDetail"
       }], function (ajaxItem) {
         var html = ajaxItem;
-        _c.eachItem([/###albumId###/g, /###albumName###/g, /###year###/g], function (replaceItem) {
+        _c.eachItem([/{albumId}/g, /{albumName}/g, /{year}/g], function (replaceItem) {
           html = html.replace(replaceItem, "");
           return false;
         });
-        _c.select("#detail").html(html.replace(/###head###/g, "Ajout d'un album"));
+        _c.select("#detail").html(html.replace(/{head}/g, "Ajout d'un album"));
         return false;
       });
     });
@@ -136,11 +136,11 @@ var _a = {
         folder: "template",
         name: "editDocumentDetail"
       }], function (html) {
-        _c.eachItem([/###documentId###/g, /###documentTitle###/g, /###content###/g], function (replaceItem) {
+        _c.eachItem([/{documentId}/g, /{documentTitle}/g, /{content}/g], function (replaceItem) {
           html = html.replace(replaceItem, "");
           return false;
         });
-        _c.select("#detail").html(html.replace(/###head###/g, "Ajout d'un document"));
+        _c.select("#detail").html(html.replace(/{head}/g, "Ajout d'un document"));
         _a.applyWysiwyg("#content");
         return false;
       });
@@ -163,11 +163,11 @@ var _a = {
         name: "editThemeDetail"
       }], function (ajaxItem) {
         var html = ajaxItem;
-        _c.eachItem([/###themeId###/g, /###themeName###/g, /###categoryList###/g], function (replaceItem) {
+        _c.eachItem([/{themeId}/g, /{themeName}/g, /{categoryList}/g], function (replaceItem) {
           html = html.replace(replaceItem, "");
           return false;
         });
-        _c.select("#detail").html(html.replace(/###head###/g, "Ajout d'un thème"));
+        _c.select("#detail").html(html.replace(/{head}/g, "Ajout d'un thème"));
         _c.eachItem(["Category"], function (context) {
           $("#choose" + context).click(_a["choose" + context + "Click"]);
           return false;
@@ -341,13 +341,13 @@ var _a = {
       }], function (ajaxItem) {
         var html = _c.ajaxList.template.editSongDetail,
             songId = documentName.split("_")[0];
-        html = html.replace(/###head###/g, "Édition d'une chanson");
-        html = html.replace(/###songId###/g, songId);
-        html = html.replace(/###songName###/g, documentTitle);
-        html = html.replace(/###versionId###/g, ajaxItem.versionId);
-        html = html.replace(/###versionName###/g, ajaxItem.versionName);
-        html = html.replace(/###text###/g, ajaxItem.text);
-        html = html.replace(/###cheat###/g, ajaxItem.cheat);
+        html = html.replace(/{head}/g, "Édition d'une chanson");
+        html = html.replace(/{songId}/g, songId);
+        html = html.replace(/{songName}/g, documentTitle);
+        html = html.replace(/{versionId}/g, ajaxItem.versionId);
+        html = html.replace(/{versionName}/g, ajaxItem.versionName);
+        html = html.replace(/{text}/g, ajaxItem.text);
+        html = html.replace(/{cheat}/g, ajaxItem.cheat);
         _c.eachItem(["composer", "interpreter"], function (context) {
           var listHtml = "",
               list;
@@ -359,7 +359,7 @@ var _a = {
             });
             listHtml = list.join("");
           }
-          html = html.replace(new RegExp("###" + context + "List###", "g"), listHtml);
+          html = html.replace(new RegExp("{" + context + "List}", "g"), listHtml);
           return false;
         });
         _c.select("#detail").html(html);
@@ -395,9 +395,9 @@ var _a = {
         }
       }], function (ajaxItem) {
         var html = _c.ajaxList.template.editArtistDetail;
-        html = html.replace(/###head###/g, "Édition d'un artiste");
-        html = html.replace(/###artistId###/g, artistId);
-        html = html.replace(/###artistName###/g, artistName);
+        html = html.replace(/{head}/g, "Édition d'un artiste");
+        html = html.replace(/{artistId}/g, artistId);
+        html = html.replace(/{artistName}/g, artistName);
         _c.eachItem(["member", "group", "composition", "interpretation"], function (context) {
           var listHtml = "",
               list;
@@ -409,7 +409,7 @@ var _a = {
             });
             listHtml = list.join("");
           }
-          html = html.replace(new RegExp("###" + context + "List###", "g"), listHtml);
+          html = html.replace(new RegExp("{" + context + "List}", "g"), listHtml);
           return false;
         });
         _c.select("#detail").html(html);
@@ -442,10 +442,10 @@ var _a = {
         }
       }], function (ajaxItem) {
         var html = _c.ajaxList.template.editAlbumDetail;
-        html = html.replace(/###head###/g, "Édition d'un album");
-        html = html.replace(/###albumId###/g, albumId);
-        html = html.replace(/###albumName###/g, albumName);
-        html = html.replace(/###year###/g, ajaxItem.year);
+        html = html.replace(/{head}/g, "Édition d'un album");
+        html = html.replace(/{albumId}/g, albumId);
+        html = html.replace(/{albumName}/g, albumName);
+        html = html.replace(/{year}/g, ajaxItem.year);
         _c.select("#detail").html(html);
         return false;
       });
@@ -470,10 +470,10 @@ var _a = {
         }
       }], function (ajaxItem) {
         var html = _c.ajaxList.template.editDocumentDetail;
-        html = html.replace(/###head###/g, "Édition d'un document");
-        html = html.replace(/###documentId###/g, documentId);
-        html = html.replace(/###documentTitle###/g, documentTitle);
-        html = html.replace(/###content###/g, ajaxItem.content);
+        html = html.replace(/{head}/g, "Édition d'un document");
+        html = html.replace(/{documentId}/g, documentId);
+        html = html.replace(/{documentTitle}/g, documentTitle);
+        html = html.replace(/{content}/g, ajaxItem.content);
         _c.select("#detail").html(html);
         _a.applyWysiwyg("#content");
         return false;
@@ -499,9 +499,9 @@ var _a = {
         }
       }], function (ajaxItem) {
         var html = _c.ajaxList.template.editThemeDetail;
-        html = html.replace(/###head###/g, "Édition d'un thème");
-        html = html.replace(/###themeId###/g, themeId);
-        html = html.replace(/###themeName###/g, themeName);
+        html = html.replace(/{head}/g, "Édition d'un thème");
+        html = html.replace(/{themeId}/g, themeId);
+        html = html.replace(/{themeName}/g, themeName);
         _c.eachItem(["category"], function (context) {
           var listHtml = "",
               list;
@@ -513,7 +513,7 @@ var _a = {
             });
             listHtml = list.join("");
           }
-          html = html.replace(new RegExp("###" + context + "List###", "g"), listHtml);
+          html = html.replace(new RegExp("{" + context + "List}", "g"), listHtml);
           return false;
         });
         _c.select("#detail").html(html);
@@ -545,8 +545,8 @@ var _a = {
         list.push(interpreterId + "_" + albumItem.id + "'" + className + ">" + albumItem.name);
         return false;
       });
-      template = _c.ajaxList.template.choose.replace(/###list###/g, "<li id='album_" + list.join("</li><li id='album_") + "</li>");
-      template = template.replace(/###title###/g, "Liste d'albums");
+      template = _c.ajaxList.template.choose.replace(/{list}/g, "<li id='album_" + list.join("</li><li id='album_") + "</li>");
+      template = template.replace(/{title}/g, "Liste d'albums");
       modalWindow.content = template;
       modalWindow.open();
       $("#chooseList > li").click(_a.albumItemClick);
@@ -569,8 +569,8 @@ var _a = {
         list.push(params.id + "_" + params.preId + item.id + "'" + className + ">" + item.name);
         return false;
       });
-      template = _c.ajaxList.template.choose.replace(/###list###/g, "<li id='" + list.join("</li><li id='") + "</li>");
-      template = template.replace(/###title###/g, params.title);
+      template = _c.ajaxList.template.choose.replace(/{list}/g, "<li id='" + list.join("</li><li id='") + "</li>");
+      template = template.replace(/{title}/g, params.title);
       modalWindow.content = template;
       modalWindow.open();
       $("#chooseList > li").click(function (event) {
@@ -657,8 +657,8 @@ var _a = {
         list.push(songItem.id + "'" + className + ">" + songItem.name);
         return false;
       });
-      template = _c.ajaxList.template.choose.replace(/###list###/g, "<li id='song_" + list.join("</li><li id='song_") + "</li>");
-      template = template.replace(/###title###/g, "Liste de chansons");
+      template = _c.ajaxList.template.choose.replace(/{list}/g, "<li id='song_" + list.join("</li><li id='song_") + "</li>");
+      template = template.replace(/{title}/g, "Liste de chansons");
       modalWindow.content = template;
       modalWindow.open();
       $("#chooseList > li").click(_a.compositionItemClick);
@@ -683,8 +683,8 @@ var _a = {
         list.push(versionItem.id + "'" + className + ">" + versionItem.name);
         return false;
       });
-      template = _c.ajaxList.template.choose.replace(/###list###/g, "<li id='version_" + list.join("</li><li id='version_") + "</li>");
-      template = template.replace(/###title###/g, "Liste de chansons");
+      template = _c.ajaxList.template.choose.replace(/{list}/g, "<li id='version_" + list.join("</li><li id='version_") + "</li>");
+      template = template.replace(/{title}/g, "Liste de chansons");
       modalWindow.content = template;
       modalWindow.open();
       $("#chooseList > li").click(_a.interpretationItemClick);
@@ -709,8 +709,8 @@ var _a = {
         list.push(songItem.id + "'" + className + ">" + songItem.name);
         return false;
       });
-      template = _c.ajaxList.template.choose.replace(/###list###/g, "<li id='song_" + list.join("</li><li id='song_") + "</li>");
-      template = template.replace(/###title###/g, "Liste de chansons");
+      template = _c.ajaxList.template.choose.replace(/{list}/g, "<li id='song_" + list.join("</li><li id='song_") + "</li>");
+      template = template.replace(/{title}/g, "Liste de chansons");
       modalWindow.content = template;
       modalWindow.open();
       $("#chooseList > li").click(_a.categoryItemClick);

@@ -82,9 +82,9 @@
     contentBody.find("p.composer, ul.performList").remove();
     contentBody.hide();
     html = contentBody.html();
-    contentBody.html(html.replace(/[<]p/g, "###newline###<p"));
+    contentBody.html(html.replace(/[<]p/g, "{newline}<p"));
     text = contentBody.text();
-    text = text.replace(/###newline###/g, "\n");
+    text = text.replace(/{newline}/g, "\n");
     contentSelected.find("div, a").die("click");
     this.getTemplate(contentSelected, text);
     return _c.ajaxList.interaction.document.select(documentName);
@@ -104,12 +104,12 @@
         "class": "newButton",
         display: "Nouveau"
       };
-      html = html.replace(/###newButton###/g, _c.ajaxList.interaction.form.makeButton(option));
+      html = html.replace(/{newButton}/g, _c.ajaxList.interaction.form.makeButton(option));
       option = {
         "class": "viewButton",
         display: "Visualiser"
       };
-      html = html.replace(/###viewButton###/g, _c.ajaxList.interaction.form.makeButton(option));
+      html = html.replace(/{viewButton}/g, _c.ajaxList.interaction.form.makeButton(option));
       contentSelected.html(html);
       var txtPartition = contentSelected.find("textarea.txtPartition:first")
       txtPartition.val(text)

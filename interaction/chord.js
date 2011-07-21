@@ -206,7 +206,7 @@
         }], function (ajaxItem) {
           var contentBody = _m.getSelectedItem("content").children(".contentBody:first").html(),
               printPreview = window.open("", "print", "scrollbars=1,resizable=1"),
-              htmlPreview = ajaxItem.replace("###body###", contentBody);
+              htmlPreview = ajaxItem.replace(/{body}/g, contentBody);
           printPreview.document.open();
           printPreview.document.write(htmlPreview);
           printPreview.document.close();
@@ -340,13 +340,13 @@
       maxFret: 5,
       index: 0
     };
-    html = _c.ajaxList.template.chordDisplay.replace(/###chordName###/g, this.buildChordName(params));
-    html = html.replace(/###neck###/g, this.buildNeck(params));
-    html = html.replace(/###noteId###/g, noteItem.id);
-    html = html.replace(/###chordId###/g, chordItem.id);
-    html = html.replace(/###bassId###/g, (bassItem != null) ? bassItem.id : "");
-    html = html.replace(/###instrumentId###/g, instrumentId);
-    html = html.replace(/###tuningId###/g, tuningId);
+    html = _c.ajaxList.template.chordDisplay.replace(/{chordName}/g, this.buildChordName(params));
+    html = html.replace(/{neck}/g, this.buildNeck(params));
+    html = html.replace(/{noteId}/g, noteItem.id);
+    html = html.replace(/{chordId}/g, chordItem.id);
+    html = html.replace(/{bassId}/g, (bassItem != null) ? bassItem.id : "");
+    html = html.replace(/{instrumentId}/g, instrumentId);
+    html = html.replace(/{tuningId}/g, tuningId);
     pos = $(objectChord).offset();
     minimum = contentSelected.offset().left;
     left = (pos.left < minimum ? minimum : pos.left) + 10 + "px";
@@ -735,7 +735,7 @@
       });
       return false;
     });
-    html = html.replace(/###noteList###/g, _c.ajaxList.interaction.form.makeChoiceList(choiceList));
+    html = html.replace(/{noteList}/g, _c.ajaxList.interaction.form.makeChoiceList(choiceList));
     observeList.push({
       "class": "noteList",
       callback: function () {
@@ -764,7 +764,7 @@
       return false;
     });
     choiceList.display = _c.ajaxList.data.chord[0].menu;
-    html = html.replace(/###chordList###/g, _c.ajaxList.interaction.form.makeChoiceList(choiceList));
+    html = html.replace(/{chordList}/g, _c.ajaxList.interaction.form.makeChoiceList(choiceList));
     observeList.push({
       "class": "chordList",
       callback: function () {
@@ -786,7 +786,7 @@
       });
       return false;
     });
-    html = html.replace(/###bassList###/g, _c.ajaxList.interaction.form.makeChoiceList(choiceList));
+    html = html.replace(/{bassList}/g, _c.ajaxList.interaction.form.makeChoiceList(choiceList));
     observeList.push({
       "class": "bassList",
       callback: function () {
@@ -809,7 +809,7 @@
       });
       return false;
     });
-    html = html.replace(/###instrumentList###/g, _c.ajaxList.interaction.form.makeChoiceList(choiceList));
+    html = html.replace(/{instrumentList}/g, _c.ajaxList.interaction.form.makeChoiceList(choiceList));
     observeList.push({
       "class": "instrumentList",
       callback: function () {
@@ -848,7 +848,7 @@
       });
       return false;
     });
-    html = html.replace(/###tuningList###/g, _c.ajaxList.interaction.form.makeChoiceList(choiceList));
+    html = html.replace(/{tuningList}/g, _c.ajaxList.interaction.form.makeChoiceList(choiceList));
     observeList.push({
       "class": "tuningList",
       callback: function () {
@@ -865,15 +865,15 @@
       maxKey: 30,
       index: 0
     };
-    html = html.replace(/###chordName###/g, this.buildChordName(params));
-    html = html.replace(/###codeList###/g, this.buildCodeList(params));
-    html = html.replace(/###neck###/g, this.buildNeck(params));
-    html = html.replace(/###keyboard###/g, this.buildKeyboard(params));
-    html = html.replace(/###noteId###/g, _c.ajaxList.data.note[0].id);
-    html = html.replace(/###chordId###/g, _c.ajaxList.data.chord[0].id);
-    html = html.replace(/###bassId###/g, "");
-    html = html.replace(/###instrumentId###/g, instrumentItem.id);
-    html = html.replace(/###tuningId###/g, instrumentItem.tuning[0].id);
+    html = html.replace(/{chordName}/g, this.buildChordName(params));
+    html = html.replace(/{codeList}/g, this.buildCodeList(params));
+    html = html.replace(/{neck}/g, this.buildNeck(params));
+    html = html.replace(/{keyboard}/g, this.buildKeyboard(params));
+    html = html.replace(/{noteId}/g, _c.ajaxList.data.note[0].id);
+    html = html.replace(/{chordId}/g, _c.ajaxList.data.chord[0].id);
+    html = html.replace(/{bassId}/g, "");
+    html = html.replace(/{instrumentId}/g, instrumentItem.id);
+    html = html.replace(/{tuningId}/g, instrumentItem.tuning[0].id);
     contentSelected = _m.getSelectedItem("content");
     contentSelected.html(html);
     contentChord = contentSelected.children("div.contentEditor:first");

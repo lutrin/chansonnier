@@ -1,24 +1,24 @@
-<h2>###head###</h2><form
+<h2>{head}</h2><form
 action="" method="post"> <input
 type="hidden" name="action" value="setSong" /><h3>Chanson</h3> <input
-type="hidden" name="songId" value="###songId###" /><div
+type="hidden" name="songId" value="{songId}" /><div
 class="table"><div
 class="row"> <label
 for="songId">Id: </label> <input
-type="text" id="newSongId" name="newSongId" value="###songId###" maxlength="255"/></div><div
+type="text" id="newSongId" name="newSongId" value="{songId}" maxlength="255"/></div><div
 class="row"> <label
 for="songName">Titre: </label> <input
-type="text" id="songName" name="songName" value="###songName###" maxlength="255"/></div></div><hr
+type="text" id="songName" name="songName" value="{songName}" maxlength="255"/></div></div><hr
 /><h3>Version</h3> <input
 type="hidden" id="mode" name="mode" value="edit" /> <input
-type="hidden" name="versionId" value="###versionId###" /><div
+type="hidden" name="versionId" value="{versionId}" /><div
 class="table"><div
 class="row"> <label
 for="versionId">Id: </label> <input
-type="text" id="newVersionId" name="newVersionId" value="###versionId###" maxlength="255"/></div><div
+type="text" id="newVersionId" name="newVersionId" value="{versionId}" maxlength="255"/></div><div
 class="row"> <label
 for="versionName">Titre: </label> <input
-type="text" id="versionName" name="versionName" value="###versionName###" maxlength="255"/></div></div><div
+type="text" id="versionName" name="versionName" value="{versionName}" maxlength="255"/></div></div><div
 class="button"><input
 type="button" id="newVersion" value="Nouvelle version" /></div><hr
 /><h3>Détails</h3><div
@@ -33,15 +33,15 @@ value="it">Italien</option><option
 value="la">Latin</option><option
 value="no">Instrumental</option> </select></div><div
 class="row"> <label
-for="text">Contenu :</label><textarea id="text" name="text" cols="80" rows="24">###text###</textarea></div><div
+for="text">Contenu :</label><textarea id="text" name="text" cols="80" rows="24">{text}</textarea></div><div
 class="row"> <label
-for="cheat">Aide-mémoire :</label><textarea id="cheat" name="cheat" cols="80" rows="5">###cheat###</textarea></div></div><hr
+for="cheat">Aide-mémoire :</label><textarea id="cheat" name="cheat" cols="80" rows="5">{cheat}</textarea></div></div><hr
 /><h3>Auteurs et compositeurs</h3><div><ul
-id="composerList"> ###composerList###</ul> <span
+id="composerList"> {composerList}</ul> <span
 class="button"><a
 id="chooseComposer" title="Choisir">Choisir dans la liste d'artistes</a></span></div><hr
 /><h3>Interprètes</h3><div><ul
-id="interpreterList"> ###interpreterList###</ul> <span
+id="interpreterList"> {interpreterList}</ul> <span
 class="button"><a
 id="chooseInterpreter" title="Choisir">Choisir dans la liste d'artistes</a></span></div><hr
 /><div> <span

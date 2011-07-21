@@ -103,13 +103,13 @@ var _m = {
     // debug mode
     //$( "html" ).addClass( "holmes-debug" );
         
-    _c.callAjax([{
+    _c.callAjax([/*{
       folder: "procedure",
       name: "getSongList"
     }, {
       folder: "procedure",
       name: "getHomeInfo"
-    }, {
+    },*/ {
       folder: "interaction",
       name: "song"
     }], _m.callBuildSongList );

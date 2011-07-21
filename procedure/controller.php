@@ -107,23 +107,23 @@ function displayMain() {
   $body_script = "<script src='" . join( "'> </script><script src='", $scriptList ) . "'> </script>";
 
   $songList = buildSongList();
-  $body = str_replace( "###songList###", $songList, $body );
+  $body = str_replace( "{songList}", $songList, $body );
   foreach( buildHomeInfo() as $key => $home ) {
-    $body = str_replace( "###$key###", $home, $body );
+    $body = str_replace( "{" . $key . "}", $home, $body );
   }
   
   $params = array(
-    "###lang###"        => "fr",
-    "###charset###"     => "UTF-8",
-    "###title###"       => "Chansonnier - Lutrin",
-    "###description###" => "Répertoire de paroles et de partitions de chansons",
-    "###author###"      => "Eric Barolet",
-    "###meta###"        => "",
-    "###stylesheet###"  => $stylesheet,
-    "###head_script###" => "<script src='../external/interaction/modernizr-1.7.min.js'> </script>",
-    "###class###"       => "main",
-    "###body###"        => $body,
-    "###body_script###" => $body_script
+    "{lang}"        => "fr",
+    "{charset}"     => "UTF-8",
+    "{title}"       => "Chansonnier - Lutrin",
+    "{description}" => "Répertoire de paroles et de partitions de chansons",
+    "{author}"      => "Eric Barolet",
+    "{meta}"        => "",
+    "{stylesheet}"  => $stylesheet,
+    "{head_script}" => "<script src='../external/interaction/modernizr-1.7.min.js'> </script>",
+    "{class}"       => "main",
+    "{body}"        => $body,
+    "{body_script}" => $body_script
   );
   header( "Content-Type: text/html; charset=utf8" );
   return str_replace( array_keys( $params ), array_values( $params ), $content );
@@ -145,7 +145,7 @@ function login() {
 
 /******************************************************************************/
 function displayForm() {
-  return str_replace( "###body###",
+  return str_replace( "{body}",
                       file_get_contents( "../template/editBody.html" ),
                       file_get_contents( "../../library/template/admin.html" ) );
 }
@@ -155,7 +155,7 @@ function logout( $msg = "" ) {
   if( isset( $_SESSION["connected"] ) ) {
     $_SESSION["connected"] = false;
   }
-  return str_replace( "###body###",
+  return str_replace( "{body}",
                       file_get_contents( "../../library/template/login.html" ) . $msg,
                       file_get_contents( "../../library/template/admin.html" ) );
 }
@@ -169,7 +169,7 @@ function callCleanAll() {
   foreach( $includeList as $include ) {
     include_once $include;
   }
-  return str_replace( "###body###",
+  return str_replace( "{body}",
                       cleanAll() . "<div class='button'><a href='admin.php'>Retour</a></div>",
                       file_get_contents( "../../library/template/admin.html" ) );
 }
@@ -351,7 +351,7 @@ function setSong() {
     }
   }
 
-  return str_replace( "###body###",
+  return str_replace( "{body}",
                       $song->save()
                       . "<br />" . clearCache() . "<div class='button'><a href='admin.php'>Retour</a></div>",
                       file_get_contents( "../../library/template/admin.html" ) );
@@ -492,7 +492,7 @@ function setArtist() {
     }
   }
 
-  return str_replace( "###body###",
+  return str_replace( "{body}",
                       $artist->save() . "<br />" . clearCache() . "<div class='button'><a href='admin.php'>Retour</a></div>",
                       file_get_contents( "../../library/template/admin.html" ) );
 }
@@ -562,7 +562,7 @@ function setAlbum() {
   }
   $album->set( array( name => $params["albumName"], year => $params["year"] ) );
 
-  return str_replace( "###body###",
+  return str_replace( "{body}",
                       $album->save() . "<br />" . clearCache() . "<div class='button'><a href='admin.php'>Retour</a></div>",
                       file_get_contents( "../../library/template/admin.html" ) );
 }
@@ -631,7 +631,7 @@ function setDocument() {
   }
   $document->set( array( title => $params["documentTitle"], content => $params["content"] ) );
 
-  return str_replace( "###body###",
+  return str_replace( "{body}",
                       $document->save() . "<br />" . clearCache() . "<div class='button'><a href='admin.php'>Retour</a></div>",
                       file_get_contents( "../../library/template/admin.html" ) );
 }
@@ -703,7 +703,7 @@ function setTheme() {
       $category = $theme->addCategory( $categoryId );
     }
   }
-  return str_replace( "###body###",
+  return str_replace( "{body}",
                       $theme->save() . "<br />" . clearCache() . "<div class='button'><a href='admin.php'>Retour</a></div>",
                       file_get_contents( "../../library/template/admin.html" ) );
 }

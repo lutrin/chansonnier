@@ -10,8 +10,8 @@
       title: "Mots clé",
       value: ""
     };
-    html = html.replace(/###keyword###/g, _c.ajaxList.interaction.form.makeTextInput(option));
-    html = html.replace(/###filterList###/g, "");
+    html = html.replace(/{keyword}/g, _c.ajaxList.interaction.form.makeTextInput(option));
+    html = html.replace(/{filterList}/g, "");
     choiceList = {
       "class": "languageList",
       vertical: true,
@@ -47,7 +47,7 @@
         "class": "no"
       }]
     };
-    html = html.replace(/###languageList###/g, _c.ajaxList.interaction.form.makeChoiceList(choiceList));
+    html = html.replace(/{languageList}/g, _c.ajaxList.interaction.form.makeChoiceList(choiceList));
     observeList.push({
       "class": "languageList",
       callback: function () {
@@ -58,7 +58,7 @@
       "class": "withChordsOption",
       display: "Avec accords"
     };
-    html = html.replace(/###withChordsOption###/g, _c.ajaxList.interaction.form.makeOption(option));
+    html = html.replace(/{withChordsOption}/g, _c.ajaxList.interaction.form.makeOption(option));
     observeList.push({
       "class": "withChordsOption",
       callback: function () {
@@ -69,7 +69,7 @@
       "class": "applyButton",
       display: "Appliquer"
     };
-    html = html.replace(/###applyButton###/g, _c.ajaxList.interaction.form.makeButton(option));
+    html = html.replace(/{applyButton}/g, _c.ajaxList.interaction.form.makeButton(option));
     observeList.push({
       "class": "applyButton",
       "callback": function () {
@@ -121,7 +121,7 @@
       });
       return false;
     });
-    html = html.replace(/###instrumentList###/g, _c.ajaxList.interaction.form.makeChoiceList(choiceList));
+    html = html.replace(/{instrumentList}/g, _c.ajaxList.interaction.form.makeChoiceList(choiceList));
     observeList.push({
       "class": "instrumentList",
       "callback": function () {
@@ -136,7 +136,7 @@
       value: 1,
       list: tuningList
     };
-    html = html.replace(/###tuningList###/g, _c.ajaxList.interaction.form.makeChoiceList(choiceList));
+    html = html.replace(/{tuningList}/g, _c.ajaxList.interaction.form.makeChoiceList(choiceList));
     observeList.push({
       "class": "tuningList",
       callback: function () {
@@ -144,7 +144,7 @@
         return false;
       }
     });
-    html = html.replace(/###result###/g, "<img src='./image/processing.gif'/>");
+    html = html.replace(/{result}/g, "<img src='./image/processing.gif'/>");
     contentSelected = _m.getSelectedItem("content");
     contentSelected.html(html);
     contentHeader = contentSelected.children("div.contentHeader:first");

@@ -19,10 +19,10 @@ modalWindow = {
 
     $( ".modal-window" ).append( "<a class=\"close-window\"></a>" );
     $( ".close-window" ).click( function() {
-      _c.modalWindow.close();
+      modalWindow.close();
     } );
     $(".modal-overlay").click( function() {
-      _c.modalWindow.close();
+      modalWindow.close();
     } );
   }
 };
