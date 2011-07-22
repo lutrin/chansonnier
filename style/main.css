@@ -76,7 +76,7 @@ span.infoTitle {
 .contentBody {
 	padding:3px;
 	padding-top:6px;
-	font-size:12px;
+	font-size:14px;
 	overflow:auto}
 
 .tableRow {
@@ -107,13 +107,13 @@ ul.infoList li.infoItem span {
   bottom: 0;
   position: fixed;
   top: 25px;
-  width: 200px;
+  width: 240px;
 }
 
 #itemList {
   position: absolute;
   margin-top: 2px;
-  width:200px;
+  width:240px;
   top: 92px;
   bottom: 20px;
   overflow-y: scroll;
@@ -132,7 +132,7 @@ ul.infoList li.infoItem span {
 	margin-top:2px}
 
 #center {
-  left: 205px;
+  left: 245px;
   right: 0;
   top: 0;
   position: absolute;
@@ -156,7 +156,7 @@ div.leftContentSelected {
   position: absolute;
   top: 20px;
   bottom: 0;
-  width: 200px;
+  width: 240px;
 }
   
 /*#searchBy, #wordInput {
@@ -715,7 +715,60 @@ table.keyList tr td {
   font-size: 12px;
 }
 
-@media screen and (max-width: 772px) {
+#itemList > ul {
+  -moz-column-width: 200px;
+  -webkit-column-width: 200px;
+  column-width: 200px;
+  -moz-column-gap: 9px;
+  -webkit-column-gap: 9px;
+  column-gap: 9px;
+  -moz-column-rule: 1px solid #eee;
+  -webkit-column-rule: 1px solid #eee;
+  column-rule: 1px solid #eee;
+}
+
+@media screen and (max-width: 1496px) {
+  #left, #itemList, #search, #tool, #document {
+    width: 640px;
+  }
+
+  #center {
+    left: 645px;
+  }
+}
+
+@media screen and (max-width: 1496px) {
+  #left, #itemList, #search, #tool, #document {
+    width: 640px;
+  }
+
+  #center {
+    left: 645px;
+  }
+}
+
+@media screen and (max-width: 1296px) {
+  #left, #itemList, #search, #tool, #document {
+    width: 440px;
+  }
+
+  #center {
+    left: 445px;
+  }
+}
+
+@media screen and (max-width: 1096px) {
+  #left, #itemList, #search, #tool, #document {
+    width: 240px;
+  }
+
+  #center {
+    left: 245px;
+  }
+}
+
+
+@media screen and (max-width: 906px) {
   #left, #search, #tool, #document, #left > .tabList, #itemList, #itemQty {
     position: static;
   }
@@ -726,15 +779,6 @@ table.keyList tr td {
 
   #search, #tool, #document, #itemList {
     width: auto;
-  }
-  
-  #songList {
-    -moz-column-width: 150px;
-    -webkit-column-width: 150px;
-    -moz-column-gap: 10px;
-    -webkit-column-gap: 10px;
-    -moz-column-rule: 1px solid #eee;
-    -webkit-column-rule: 1px solid #eee;
   }
   
   #itemList{
@@ -754,17 +798,25 @@ table.keyList tr td {
   }
 }
 
-@media screen and (max-width: 567px) { 
-  .fullScreen .contentBody { 
+@media screen and (max-width: 661px) { 
+  .contentBody { 
+    font-size: 12px;
+  } 
+}
+
+@media screen and (max-width: 591px) { 
+  .contentBody { 
     font-size: 10px;
   } 
 }
 
-@media screen and (max-width: 487px) { 
-  .fullScreen .contentBody { 
+@media screen and (max-width: 501px) { 
+  .contentBody { 
     font-size: 8px;
   } 
 }
+
+
 
 @media print {
   header {

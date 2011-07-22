@@ -9,7 +9,7 @@
  body {
 	font-family:verdana,arial,helvetica,sans-serif;
 	text-align:left;
-	font-size:10px}
+	font-size:12px}
 
  h1 {
 	 font-size: 20px;
@@ -33,7 +33,7 @@ textarea,input {
 
 textarea {
   font-family:monospace,"Courier New";
-	font-size:12px;
+	font-size:14px;
 	resize:none}
 
 a {
