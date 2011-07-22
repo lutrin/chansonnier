@@ -193,6 +193,17 @@
     };
     objectText.observeList.push(observeItem);
     option = {
+      "class": "closeButton",
+      display: "Fermer"
+    };
+    objectText.optionList += App_form.makeButton(option);
+    objectText.observeList.push({
+      "class": "closeButton",
+      callback: function () {
+        $( this ).parents( ".documentSelected:first" ).remove();
+      }
+    });
+    option = {
       "class": "printButton",
       display: "Optimiser"
     };

@@ -468,8 +468,12 @@ table.keyList tr td {
 .key_c img,.key_d img,.key_e img,.key_f img,.key_g img,.key_a img,.key_b img {
 	margin-bottom:10px}
 
-.key_c img,.key_f img,.applyButton,.editButton,.printButton {
+.key_c img,.key_f img,.applyButton,.editButton,.printButton,.closeButton {
 	float:right}
+
+.closeButton {
+  display: none;
+}  
 
 .fret {
 	border-left:solid #333333 1px;
@@ -712,16 +716,41 @@ table.keyList tr td {
 }
 
 @media screen and (max-width: 772px) {
-  #left, #search, #tool, #document, #left > .tabList, #itemList {
+  #left, #search, #tool, #document, #left > .tabList, #itemList, #itemQty {
     position: static;
   }
 
-  #left, #search, #tool, #document {
+  #left, #center {
     width: 100%;
   }
 
+  #search, #tool, #document, #itemList {
+    width: auto;
+  }
+  
+  #songList {
+    -moz-column-width: 150px;
+    -webkit-column-width: 150px;
+    -moz-column-gap: 10px;
+    -webkit-column-gap: 10px;
+    -moz-column-rule: 1px solid #eee;
+    -webkit-column-rule: 1px solid #eee;
+  }
+  
+  #itemList{
+    overflow-y: visible;
+  }
+
   #center {
+    left: 0;
+  }
+
+  #center .tabList, [name=home], .printButton {
     display: none;
+  }
+  
+  .closeButton {
+    display: block;
   }
 }
 
