@@ -61,6 +61,7 @@
         }], function (ajaxItem) {
           return ajaxItem.load(documentName, documentTitle);
         });
+        $( document ).scrollTop( 0 );
       } else {
         version = target.parents("li.versionList:first");
         if (version.size()) {

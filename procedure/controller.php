@@ -147,7 +147,7 @@ function login() {
 function displayForm() {
   return str_replace( "{body}",
                       file_get_contents( "../template/editBody.html" ),
-                      file_get_contents( "../../library/template/admin.html" ) );
+                      file_get_contents( "../template/admin.html" ) );
 }
 
 /******************************************************************************/
@@ -156,8 +156,8 @@ function logout( $msg = "" ) {
     $_SESSION["connected"] = false;
   }
   return str_replace( "{body}",
-                      file_get_contents( "../../library/template/login.html" ) . $msg,
-                      file_get_contents( "../../library/template/admin.html" ) );
+                      file_get_contents( "../../template/login.html" ) . $msg,
+                      file_get_contents( "../../template/admin.html" ) );
 }
 
 /******************************************************************************/

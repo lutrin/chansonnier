@@ -178,7 +178,7 @@
     },
         iChoice, observeItem, buttonList, contentHeader, option;
     choiceList.list = [];
-    for (iChoice = 10; iChoice < 16; iChoice++) {
+    /*for (iChoice = 10; iChoice < 16; iChoice++) {
       choiceList.list.push({
         display: iChoice + " px",
         value: iChoice + "px"
@@ -191,7 +191,7 @@
         return _c.ajaxList.interaction.chord.resize(_m.getSelectedItem("content").find("div.sizeList:first"));
       }
     };
-    objectText.observeList.push(observeItem);
+    objectText.observeList.push(observeItem);*/
     option = {
       "class": "closeButton",
       display: "Fermer"
@@ -200,7 +200,7 @@
     objectText.observeList.push({
       "class": "closeButton",
       callback: function () {
-        $( this ).parents( ".documentSelected:first" ).remove();
+        $( ".documentSelected:first,.docSelected:first" ).remove();
       }
     });
     option = {
