@@ -203,6 +203,7 @@
         $( ".documentSelected:first,.docSelected:first" ).remove();
       }
     });
+    /*
     option = {
       "class": "printButton",
       display: "Optimiser"
@@ -212,19 +213,8 @@
       "class": "printButton",
       callback: function () {
         $( "body" ).addClass( "fullScreen" );
-        /*return _c.callAjax([{ folder: "template",
-          name: "preview"
-        }], function (ajaxItem) {
-          var contentBody = _m.getSelectedItem("content").children(".contentBody:first").html(),
-              printPreview = window.open("", "print", "scrollbars=1,resizable=1"),
-              htmlPreview = ajaxItem.replace(/{body}/g, contentBody);
-          printPreview.document.open();
-          printPreview.document.write(htmlPreview);
-          printPreview.document.close();
-          return false;
-        });*/
       }
-    });
+    });*/
     option = {
       "class": "editButton",
       display: "Éditer"

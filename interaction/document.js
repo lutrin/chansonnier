@@ -111,6 +111,7 @@
     objectHTML = $("#itemList").find("div.documentTitle" + criteria);
     objectHTML.removeClass("documentTitle");
     objectHTML.addClass("documentTitleSelected");
+    $( "title" ).html( $(  criteria + ":first" ).html() + " - Lutrin" );
     return false;
   },
   close: function (documentName) {

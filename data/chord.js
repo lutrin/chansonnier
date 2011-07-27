@@ -42,13 +42,13 @@
   "halfton": [0, 4, 7, 10]
 }, {
   "id": "maj7",
-  "name": "Majoré 7ième",
+  "name": "7ième Majeure",
   "code": ["maj7", "Maj7", "M7", "7M"],
   "menu": "maj7",
   "halfton": [0, 4, 7, 11]
 }, {
   "id": "maj9",
-  "name": "Majoré 9ième",
+  "name": "9ième Majeure",
   "code": ["maj9", "Maj9", "M9", "9M"],
   "menu": "maj9",
   "halfton": [0, 2, 4, 7, 11]
@@ -84,7 +84,7 @@
   "halfton": [0, 3, 7, 10]
 }, {
   "id": "mmaj7",
-  "name": "Mineur Majoré 7ième",
+  "name": "Mineur 7ième Majeure",
   "code": ["mmaj7", "minmaj7", "-maj7", "mM7", "m+7"],
   "menu": "mmaj7",
   "halfton": [0, 3, 7, 11]
@@ -150,7 +150,7 @@
   "halfton": [0, 4, 5, 7]
 }, {
   "id": "maj7sus4",
-  "name": "Majoré 7ième Suspendu 4ième",
+  "name": "7ième Majeure Suspendu 4ième",
   "code": "maj7sus4",
   "menu": "maj7sus4",
   "halfton": [0, 4, 5, 7, 11]
@@ -168,7 +168,7 @@
   "halfton": [0, 3, 5, 7]
 }, {
   "id": "maj7aug4",
-  "name": "Majoré 7ième Augmenté 4ième",
+  "name": "7ième Majeure Augmenté 4ième",
   "code": "maj7aug4",
   "menu": "maj7aug4",
   "halfton": [0, 4, 6, 7, 11]

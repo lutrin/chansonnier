@@ -800,25 +800,3 @@ table.keyList tr td {
     font-size: 8px;
   } 
 }
-
-@media print {
-  header {
-    display: none;
-  }
-
-  #left, #center .tabList, .contentHeader {
-    display: none;
-  }
-
-  #left {
-    left: 0;
-  }
-  
-  .contentBody  p {
-    page-break-after: avoid;
-  }
-  
-  .contentBody  p.break {
-    page-break-after: auto;
-  }
-}

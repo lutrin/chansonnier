@@ -1,0 +1,15 @@
+header, #left, #center .tabList, .contentHeader {
+  display: none;
+}
+
+#center {
+  left: 0;
+}
+
+.contentBody  p {
+  page-break-after: avoid;
+}
+
+.contentBody  p.break {
+  page-break-after: auto;
+}

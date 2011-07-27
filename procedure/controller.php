@@ -87,7 +87,7 @@ function displayMain() {
   $content = file_get_contents( "../../library/template/index.html" );
   $body = file_get_contents( "../template/main.html" );
 
-  # get styles TODO merge
+  # get styles TODO merge on the fly
   $styleList = array( "../external/style/boilerplate.style.css",
                       "../external/style/holmes.min.css",
                       "style/base.css",
@@ -95,11 +95,12 @@ function displayMain() {
                       "style/color.css",
                       "style/form.css",
                       "style/text.css",
-                      "style/rounded.css",
-                      "style/mobile.css" );
-  $stylesheet = "<link rel='stylesheet' href='" . join( "' /><link rel='stylesheet' href='", $styleList ) . "' />";
+                      "style/rounded.css" );
+  $stylesheet = "<link rel='stylesheet' href='" . join( "' /><link rel='stylesheet' href='", $styleList ) . "' />"
+              . "<link rel='stylesheet' href='style/print.css' media='print' />"
+              . "<link rel='stylesheet' href='style/handheld.css' media='handheld' />";
 
-  # get script TODO merge
+  # get script TODO merge on the fly
   $scriptList = array( "../external/interaction/jquery-1.6.2.min.js",
                        "../external/interaction/jquery-ui-1.8.11.custom.min.js",
                        "../library/interaction/common.js",
@@ -115,7 +116,7 @@ function displayMain() {
   $params = array(
     "{lang}"        => "fr",
     "{charset}"     => "UTF-8",
-    "{title}"       => "Chansonnier - Lutrin",
+    "{title}"       => "Chansonnier, liste de paroles et partitions - Lutrin",
     "{description}" => "Répertoire de paroles et de partitions de chansons",
     "{author}"      => "Eric Barolet",
     "{meta}"        => "",
