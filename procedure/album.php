@@ -1,6 +1,9 @@
 <?php
 
 class album extends data {
+  protected static $table = "album";
+  protected static $field = array( "k", "id", "name", "year" );
+
   /****************************************************************************/
   public static function getList() {
     $data = false;
@@ -10,19 +13,12 @@ class album extends data {
     if( !$cacheDocument->loaded() ) {
 
       # Get album list
-      $sql = "SELECT id, name FROM album ORDER BY id;";
-      if( !$result = DB::runSql( $sql ) ) {
-        return "Problème de connection à la base de données.";
-      }
-      if( mysql_num_rows( $result ) < 1 ) {
+      if( !$albumList = DB::select( array(
+          "field" => "id,name",
+          "table" => self::$table,
+          "order" => "id"
+        ) ) ) {
         return "Aucun item trouvé.";
-      }
-
-      # build album list
-      $albumList = array();
-      while( $item = mysql_fetch_assoc( $result ) ) {
-        array_push( $albumList, array( id   => $item["id"],
-                                       name => $item["name"] ) );
       }
       $data = json_encode( $albumList );
       $cacheDocument->save( $data );
@@ -37,17 +33,15 @@ class album extends data {
   public static function getDetail( $id ) {
 
     # get album
-    $sql = "SELECT year FROM album WHERE id = '$id';";
-    if( !$result = DB::runSql( $sql ) ) {
-      return "Problème de connection à la base de données.{album}";
-    }
-    if( $item = mysql_fetch_assoc( $result ) ) {
-      $albumItem = array( year => $item["year"] );
-    } else {
+    if( !$result = DB::select( array(
+        "field" => "year",
+        "table" => self::$table,
+        "where" => "id='$id'"
+      ) ) ) {
       return "Enregistrement non trouvé.";
     }
     header( 'Content-Type: application/json; charset=UTF-8' );
-    return json_encode( $albumItem );
+    return json_encode( $result[0] );
   }
 
   /****************************************************************************/
@@ -61,61 +55,47 @@ class album extends data {
 
   /****************************************************************************/
   public function exists( $id ) {
-    $sql = "SELECT k FROM album WHERE id='$id';";
-    $result = DB::runSql( $sql );
-    return mysql_num_rows( $result );
+    return DB::count( array(
+      "field" => "k",
+      "table" => self::$table,
+      "where" => "id='$id'"
+    ) );
   }
 
   /****************************************************************************/
   public function save() {
     if( isset( $this->fields["k"] ) && $this->fields["k"] ) {
+    
       # update mode
-      $setting = array();
-      foreach( $this->fields as $key=>$field ) {
-        if( $key != "k" ) {
-          if( $key == "year" ) {
-            array_push( $setting, $key . " = $field" );
-          } else {
-            array_push( $setting, $key . " = '$field'" );
-          }
-        }
-      }
-      if( count( $setting ) ) {
-        $sql = "UPDATE album SET " . join( ", ", $setting ) . " WHERE k = " . $this->fields["k"] . ";";
-        $result = DB::runSql( $sql );
-        if( !$result ) {
-          print "Problème de connexion à la base de données.$sql<br />";
-          exit;
-        }
-        print "Mise à jour de l'album " . $this->fields["id"] . "<br />";
-      }
+      DB::update( array(
+        "table" => self::$table,
+        "set"   => $this->fields,
+        "where" => "k='{$this->fields["k"]}'"
+      ) );
+      print "Mise à jour de l'album " . $this->fields["id"] . "<br />";
     } else {
+    
       # insert mode
-      $sql = "INSERT INTO album ( id, name, year ) VALUES ( '" . $this->fields["id"] . "', '" . $this->fields["name"] . "', " . $this->fields["year"] . " );";
-      $result = DB::runSql( $sql );
-      if( !$result ) {
-        return "Problème de connexion à la base de données.$sql";
-        exit;
-      }
+      DB::insert( array(
+        "table"  => self::$table,
+        "field"  => array_keys( $this->fields ),
+        "values" => array_values( $this->fields )
+      ) );
       print "Insertion de l'album " . $this->fields["id"] . "<br />";
       $this->loadInfo();
     }
   }
 
   /****************************************************************************/
-  protected function resetInfo() {
-    parent::resetInfo();
-  }
-
-  /****************************************************************************/
   protected function loadInfo() {
     $id = $this->fields["id"];
-    $sql = "SELECT * FROM album WHERE id='$id';";
-    $result = DB::runSql( $sql );
-    if( $item = mysql_fetch_assoc( $result ) ) {
-      foreach( array( "k", "name", "year" ) as $key ) {
-        $this->fields[$key] = $item[$key];
-      }
+    $result = DB::select( array(
+      "field" => self::$field,
+      "table" => self::$table,
+      "where" => "id='" . $this->fields["id"] . "'"
+    ) );
+    if( $result ) {
+      $this->fields = $result[0];
     } else {
       $this->resetInfo();
       $this->fields["id"] = $id;

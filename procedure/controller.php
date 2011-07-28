@@ -157,8 +157,8 @@ function logout( $msg = "" ) {
     $_SESSION["connected"] = false;
   }
   return str_replace( "{body}",
-                      file_get_contents( "../../template/login.html" ) . $msg,
-                      file_get_contents( "../../template/admin.html" ) );
+                      file_get_contents( "../template/login.html" ) . $msg,
+                      file_get_contents( "../template/admin.html" ) );
 }
 
 /******************************************************************************/
@@ -172,7 +172,7 @@ function callCleanAll() {
   }
   return str_replace( "{body}",
                       cleanAll() . "<div class='button'><a href='admin.php'>Retour</a></div>",
-                      file_get_contents( "../../library/template/admin.html" ) );
+                      file_get_contents( "../template/admin.html" ) );
 }
 
 /******************************************************************************/
