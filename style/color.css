@@ -1,6 +1,9 @@
 body, a, a:active, a:visited {
 	 color:#000000 }
 
+header a {
+}
+
  .dot {
 	color:#FFFFFF}
 
@@ -11,13 +14,13 @@ div.tab,div.tabSelected,div.doc,div.docSelected,.chordTab,.popupTab,.button {
 	color:#FFFFFF}
 
 body.main {
-	background-color:#F8F4E3}
+	background-color:#444}
 
 #wordInput,.contentEditor .textareaInput,.optionItemList,.choiceList:hover,.textInput,#itemList,li.section div.groupList ul,ul#songList li.song:hover,ul#artistList li.song:hover,.row,.rowOff,table.keyList tr td,.songResult:hover,#lastAdded,#lastModified,#lastViewed,#mostVisited {
 	background-color:#FFFFFF}
 
 #searchBy,li.reference,a.documentTitle:focus,.menuList,ul.stringList,.note,.noteOff,.chordSection,.contentHeader,.contentEditor,.popupInner,.fingeringControl,.fretNumber {
-	background-color:#D4E5E5}
+	background-color:#bbb}
 
 div.groupTitle,li.section div.groupList {
 	background-color:#D4E5E5}
@@ -35,7 +38,7 @@ div.groupTitle,li.section div.groupList {
 	background-color:#E1E1E1}
 
 div.documentSelected,#search,#tool,#document,div.tab,div.tabSelected,div.doc,div.docSelected,.neck,.chordTab,.popupTab,.popupBody,.chordFooter {
-	background-color:#618383}
+	background-color:#888}
 
 .optionItem,.choiceList,.tableCell,.infoItem,.toolListContent {
 	border-color:#FFFFFF}
