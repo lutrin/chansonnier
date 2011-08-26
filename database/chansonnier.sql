@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.3.9
+-- version 3.2.4
 -- http://www.phpmyadmin.net
 --
 -- Serveur: localhost
--- Généré le : Mer 15 Juin 2011 à 13:01
--- Version du serveur: 5.5.8
--- Version de PHP: 5.3.5
+-- Généré le : Ven 26 Août 2011 à 06:15
+-- Version du serveur: 5.1.41
+-- Version de PHP: 5.3.1
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
@@ -25,7 +25,6 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- Structure de la table `album`
 --
 
-DROP TABLE IF EXISTS `album`;
 CREATE TABLE IF NOT EXISTS `album` (
   `k` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `id` varchar(255) NOT NULL,
@@ -33,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `album` (
   `year` smallint(4) unsigned DEFAULT NULL,
   PRIMARY KEY (`k`),
   KEY `id` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=157 ;
 
 --
 -- Contenu de la table `album`
@@ -203,7 +202,6 @@ INSERT INTO `album` (`k`, `id`, `name`, `year`) VALUES
 -- Structure de la table `artist`
 --
 
-DROP TABLE IF EXISTS `artist`;
 CREATE TABLE IF NOT EXISTS `artist` (
   `k` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `id` varchar(255) NOT NULL,
@@ -211,7 +209,7 @@ CREATE TABLE IF NOT EXISTS `artist` (
   `origin` varchar(2) NOT NULL,
   PRIMARY KEY (`k`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=334 ;
 
 --
 -- Contenu de la table `artist`
@@ -549,7 +547,8 @@ INSERT INTO `artist` (`k`, `id`, `name`, `origin`) VALUES
 (329, 'claudedebussy', 'Claude Debussy', 'fr'),
 (330, 'lacompagniecreole', 'La Compagnie Créole', 'fr'),
 (331, 'sergereggiani', 'Serge Reggiani', 'fr'),
-(332, 'fredpellerin', 'Fred Pellerin', 'qc');
+(332, 'fredpellerin', 'Fred Pellerin', 'qc'),
+(333, 'tricotmachine', 'Tricot Machine', 'qc');
 
 -- --------------------------------------------------------
 
@@ -557,13 +556,12 @@ INSERT INTO `artist` (`k`, `id`, `name`, `origin`) VALUES
 -- Structure de la table `category`
 --
 
-DROP TABLE IF EXISTS `category`;
 CREATE TABLE IF NOT EXISTS `category` (
   `k` mediumint(9) NOT NULL AUTO_INCREMENT,
   `songK` mediumint(9) NOT NULL,
   `themeK` mediumint(9) NOT NULL,
   PRIMARY KEY (`k`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=49 ;
 
 --
 -- Contenu de la table `category`
@@ -625,7 +623,6 @@ INSERT INTO `category` (`k`, `songK`, `themeK`) VALUES
 -- Structure de la table `composer`
 --
 
-DROP TABLE IF EXISTS `composer`;
 CREATE TABLE IF NOT EXISTS `composer` (
   `k` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `songK` mediumint(8) unsigned NOT NULL,
@@ -634,7 +631,7 @@ CREATE TABLE IF NOT EXISTS `composer` (
   PRIMARY KEY (`k`),
   KEY `artistK` (`artistK`),
   KEY `songK` (`songK`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=125 ;
 
 --
 -- Contenu de la table `composer`
@@ -768,7 +765,6 @@ INSERT INTO `composer` (`k`, `songK`, `artistK`, `type`) VALUES
 -- Structure de la table `document`
 --
 
-DROP TABLE IF EXISTS `document`;
 CREATE TABLE IF NOT EXISTS `document` (
   `k` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `id` varchar(255) NOT NULL,
@@ -776,7 +772,7 @@ CREATE TABLE IF NOT EXISTS `document` (
   `content` text NOT NULL,
   PRIMARY KEY (`k`),
   KEY `id` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- Contenu de la table `document`
@@ -791,7 +787,6 @@ INSERT INTO `document` (`k`, `id`, `title`, `content`) VALUES
 -- Structure de la table `interpreter`
 --
 
-DROP TABLE IF EXISTS `interpreter`;
 CREATE TABLE IF NOT EXISTS `interpreter` (
   `k` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `versionK` mediumint(8) unsigned NOT NULL,
@@ -799,7 +794,7 @@ CREATE TABLE IF NOT EXISTS `interpreter` (
   PRIMARY KEY (`k`),
   KEY `versionK` (`versionK`),
   KEY `artistK` (`artistK`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=729 ;
 
 --
 -- Contenu de la table `interpreter`
@@ -1531,7 +1526,8 @@ INSERT INTO `interpreter` (`k`, `versionK`, `artistK`) VALUES
 (724, 608, 156),
 (725, 609, 332),
 (726, 609, 331),
-(727, 610, 259);
+(727, 610, 259),
+(728, 611, 333);
 
 -- --------------------------------------------------------
 
@@ -1539,7 +1535,6 @@ INSERT INTO `interpreter` (`k`, `versionK`, `artistK`) VALUES
 -- Structure de la table `member`
 --
 
-DROP TABLE IF EXISTS `member`;
 CREATE TABLE IF NOT EXISTS `member` (
   `k` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `groupK` mediumint(8) unsigned NOT NULL,
@@ -1547,7 +1542,7 @@ CREATE TABLE IF NOT EXISTS `member` (
   PRIMARY KEY (`k`),
   KEY `groupK` (`groupK`),
   KEY `artistK` (`artistK`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=111 ;
 
 --
 -- Contenu de la table `member`
@@ -1670,7 +1665,6 @@ INSERT INTO `member` (`k`, `groupK`, `artistK`) VALUES
 -- Structure de la table `song`
 --
 
-DROP TABLE IF EXISTS `song`;
 CREATE TABLE IF NOT EXISTS `song` (
   `k` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `id` varchar(255) NOT NULL,
@@ -1678,7 +1672,7 @@ CREATE TABLE IF NOT EXISTS `song` (
   `language` varchar(2) DEFAULT NULL,
   PRIMARY KEY (`k`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=606 ;
 
 --
 -- Contenu de la table `song`
@@ -2288,7 +2282,8 @@ INSERT INTO `song` (`k`, `id`, `name`, `language`) VALUES
 (601, 'cafaitrirelesoiseaux', 'Ça fait rire les oiseaux', 'fr'),
 (602, 'monsieurlechat', 'Monsieur le chat', 'fr'),
 (603, 'lepetitgarcon', 'Le petit garçon', 'fr'),
-(604, 'onvasaimerencore', 'On va s''aimer encore', 'fr');
+(604, 'onvasaimerencore', 'On va s''aimer encore', 'fr'),
+(605, 'lours', 'L''ours', 'fr');
 
 -- --------------------------------------------------------
 
@@ -2296,7 +2291,6 @@ INSERT INTO `song` (`k`, `id`, `name`, `language`) VALUES
 -- Structure de la table `theme`
 --
 
-DROP TABLE IF EXISTS `theme`;
 CREATE TABLE IF NOT EXISTS `theme` (
   `k` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `id` varchar(255) NOT NULL,
@@ -2304,7 +2298,7 @@ CREATE TABLE IF NOT EXISTS `theme` (
   PRIMARY KEY (`k`),
   UNIQUE KEY `name` (`name`),
   KEY `id` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
 -- Contenu de la table `theme`
@@ -2326,7 +2320,6 @@ INSERT INTO `theme` (`k`, `id`, `name`) VALUES
 -- Structure de la table `track`
 --
 
-DROP TABLE IF EXISTS `track`;
 CREATE TABLE IF NOT EXISTS `track` (
   `k` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `interpreterK` mediumint(8) unsigned NOT NULL,
@@ -2334,7 +2327,7 @@ CREATE TABLE IF NOT EXISTS `track` (
   PRIMARY KEY (`k`),
   KEY `interpreterK` (`interpreterK`),
   KEY `albumK` (`albumK`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=372 ;
 
 --
 -- Contenu de la table `track`
@@ -2719,7 +2712,6 @@ INSERT INTO `track` (`k`, `interpreterK`, `albumK`) VALUES
 -- Structure de la table `version`
 --
 
-DROP TABLE IF EXISTS `version`;
 CREATE TABLE IF NOT EXISTS `version` (
   `k` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `id` varchar(80) NOT NULL,
@@ -2734,7 +2726,7 @@ CREATE TABLE IF NOT EXISTS `version` (
   PRIMARY KEY (`k`),
   KEY `id` (`id`),
   KEY `songK` (`songK`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=612 ;
 
 --
 -- Contenu de la table `version`
@@ -3371,4 +3363,5 @@ INSERT INTO `version` (`k`, `id`, `name`, `songK`, `text`, `cheat`, `created`, `
 (607, '', '', 601, 'Ça fait rire les oiseaux\r\n\r\n       F \r\nÇa fait rir'' les oiseaux \r\n       Bb  \r\nÇa fait chanter les abeilles \r\n   F \r\nÇa chasse les nuages \r\n        C \r\nEt fait briller le soleil \r\n        F \r\nÇa fait rir'' les oiseaux \r\n     Bb  \r\nEt danser les écureuils \r\n     F \r\nÇa rajoute des couleurs \r\n       C \r\nAux couleurs de l''arc-en-ciel \r\n       F \r\nÇa fait rir'' les oiseaux \r\nBb   C      F \r\noh oh oh, rir'' les oiseaux \r\n\r\n\r\n F \r\nUne chanson d''amour \r\n                 Bb  \r\nC''est comme un looping en avion \r\n   C  \r\nÇa fait battre le coeur \r\n              F \r\nDes filles et des garçons \r\nF\r\nUne chanson d''amour, \r\n           Bb  \r\nC''est  l''oxygèn'' dans la maison \r\n    C7 \r\nTes pieds n''touch''nt plus par terre \r\n          F \r\nT''es en lévitation \r\n\r\n\r\n          Dm  \r\nY''a d'' la pluie dans ta vie, \r\n   Bb  \r\nLe soir te fait peur \r\n   C \r\nLa musique est là pour ça \r\n      Dm  \r\nY''a toujours une mélodie \r\n         Bb  \r\nPour des jours meilleurs \r\n       C \r\nAllez, tape dans tes mains\r\nC \r\nÇa porte bonheur \r\nC\r\nC''est magiqu'' un refrain \r\nC\r\nQu''on reprend tous en choeur \r\n\r\n\r\nT''es revenu chez toi \r\nLa tête pleine de souvenirs \r\nDes soirs au clair de lune \r\nDes moments de plaisir \r\nT''es revenu chez toi \r\nEt tu veux déjà repartir \r\nPour trouver l''aventure \r\nQui n''arrête pas de finir \r\n\r\nY''a du gris dans ta nuit \r\nDes larmes dans ton coeur \r\nLa musique est là pour ça \r\nY''a toujours une mélodie \r\nPour des jours meilleurs \r\nAllez, tape dans tes mains \r\nÇa porte bonheur \r\nC''est magique un refrain \r\nQu''on reprend tous en choeur', '', '2010-12-09 06:50:20', '2010-12-09 06:54:40', '2011-01-11 09:18:25', 4),
 (608, '', '', 602, 'Monsieur le chat\r\n\r\nDites-moi monsieur le chat \r\nOù est Madame chatte\r\nSi vous ne le savez pas\r\nDonnez votre langue au chat\r\n\r\nS''il se lève du mauvais pied\r\nLe chat se hérisse\r\nPuis il se met le dos rond\r\nEt il sort ses griffes\r\n\r\nLe chat voudrait un oiseau\r\nPour son déjeuner\r\nMais l''oiseau l''a aperçu\r\nIl s''est envolé\r\n\r\nLe chat doit s''d''barbouiller\r\nMais a peur de l''eau\r\nQue fera-t-il pour se lécher\r\nJusque dans le dos', '', '2011-01-18 12:39:16', '2011-01-18 12:40:23', '2011-06-15 12:24:38', 4),
 (609, '', '', 603, 'Le petit garçon\r\n\r\nCm                    Gm        Cm         Gm  \r\nCe soir, mon petit garçon ,mon enfant mon amour\r\nCm                 Gm    Cm               Gm  \r\nIl pleut sur la maison ,mon garçon mon amour\r\nCm                 Fm9      Cm              Fm7  \r\nComme tu lui ressembles ,on reste tous les deux\r\nA#7                   D#m7       Cm            D7       G7  \r\nOn va bien jouer ensemble ,on est là tous les deux, seuls\r\nCm                    Gm               Cm               Gm  \r\nCe soir, elle ne rentre plus, je n''sais plus , je n''sais pas\r\nCm                     Gm      Cm                Gm  \r\nElle écrira demain, peut-être nous aurons une lettre\r\nCm                Fm9       Cm           Fm7  \r\nIl pleut sur le jardin ,je vais faire du feu\r\nA#7                 D#m7       Cm            D7       G7  \r\nJe n''ai plus de chagrin, on est là tous les deux, seuls\r\nFm                       D#m7   Cm          Fm  \r\nAttends, je sais de histoires, Il était une fois \r\nA#7                  D#                        la7 \r\nIl pleut dans ma mémoire je crois, ne pleure pas\r\nFm7       A#7                 D#m7   Cm                  Fm  \r\nAttends, je sais des histoires mais il fait un peu froid ce soir\r\nA#7                       D#         A#7                       Fm  \r\nUne histoire de gens qui s''aiment une histoire de gens qui s''aiment\r\nFm   Fm6       G7       Cm              Cm   G7  \r\nTu vas voir , ne t''en vas pas ne me laisse pas\r\n\r\n\r\nJe ne sais plus faire du feu, mon enfant mon amour\r\nJe ne peux plus grand-chose mon garçon mon amour\r\nComme tu lui ressembles, on est là tous les deux\r\nPerdus dans cette chambre, dans cette grande chambre, seuls.. seuls\r\nOn va jouer à la guerre et tu t''endormiras\r\nCe soir elle ne s''ra pas là je n''sais plus ,je n''sais pas\r\nJe n''aime pas l''hiver il n''y a plus de feu\r\nIl n''y a plus rien à faire qu''à jouer tous les deux, seuls\r\n\r\n\r\nAttends, le sais de histoires, Il était une fois\r\nJe n''ai plus de mémoire je crois, ne pleure pas\r\nAttends, je sais des histoires mais il est un peu tard ce soir                                                                                                                                                  A#7                                 D#               Cm                       rem\r\nUne histoire de gens qui s''aiment et qui jouèrent à la guerre\r\nFm   Fm6     G7              Cm                       Cm   G7  \r\nEcoute moi , elle n''est plus là. .non , ne pleure pas', '', '2011-01-31 18:29:13', '2011-01-31 18:30:10', '2011-06-15 12:49:49', 11),
-(610, '', '', 604, 'On va s''aimer encore \r\n\r\nQuand on verra dans le miroir nos faces ridées pleines d''histoires\r\nQuand on en aura moins devant qu''on en a maintenant \r\nQuand on aura enfin du temps et qu''on vivra tranquillement\r\nQuand la maison sera payée et qui restera plus rien qu''à s''aimer\r\n\r\nOn va s''aimer encore, au travers des doutes,\r\ndes travers de la route et de plus en plus fort \r\nOn va s''aimer encore, au travers des bons coups,\r\nau travers des déboires, à la vie, à la mort on va s''aimer encore\r\n\r\nQuand nos enfants vont partir, qu''on les aura vu grandir\r\nQuand ce sera leur tour de choisir, leur tour de bâtir\r\nQuand nos têtes seront blanches, qu''on aura de l''expérience\r\nQuand plus personne va nous attendre, qui restera plus rien qu''à s''éprendre\r\n\r\nOn va s''aimer encore, au travers des doutes,\r\ndes travers de la route et de plus en plus fort\r\nOn va s''aimer encore, au travers des bons coups,\r\nau travers des déboires, à la vie, à la mort on va s''aimer encore \r\n\r\nQuand les temps auront changés, qu''on sera complètement démodés\r\nQuand toutes les bombes auront sautées, que la paix sera là pour rester\r\nQuand sans boussole sans plan, on partira au gré du vent\r\nQuand on lèvera les voiles devenues de la poussière d''étoiles\r\n\r\nOn va s''aimer encore, après nos bons coups,\r\naprès nos déboires et de plus en plus fort \r\nOn va s''aimer encore au bout de nos doutes\r\nau bout de la route au delà de la mort \r\nOn va s''aimer encore, au bout du doute,\r\nau bout de la route au delà de la mort \r\nOn va s''aimer ...', '', '2011-06-08 03:38:26', '2011-06-08 03:38:26', '2011-06-13 03:58:55', 2);
+(610, '', '', 604, 'On va s''aimer encore \r\n\r\nQuand on verra dans le miroir nos faces ridées pleines d''histoires\r\nQuand on en aura moins devant qu''on en a maintenant \r\nQuand on aura enfin du temps et qu''on vivra tranquillement\r\nQuand la maison sera payée et qui restera plus rien qu''à s''aimer\r\n\r\nOn va s''aimer encore, au travers des doutes,\r\ndes travers de la route et de plus en plus fort \r\nOn va s''aimer encore, au travers des bons coups,\r\nau travers des déboires, à la vie, à la mort on va s''aimer encore\r\n\r\nQuand nos enfants vont partir, qu''on les aura vu grandir\r\nQuand ce sera leur tour de choisir, leur tour de bâtir\r\nQuand nos têtes seront blanches, qu''on aura de l''expérience\r\nQuand plus personne va nous attendre, qui restera plus rien qu''à s''éprendre\r\n\r\nOn va s''aimer encore, au travers des doutes,\r\ndes travers de la route et de plus en plus fort\r\nOn va s''aimer encore, au travers des bons coups,\r\nau travers des déboires, à la vie, à la mort on va s''aimer encore \r\n\r\nQuand les temps auront changés, qu''on sera complètement démodés\r\nQuand toutes les bombes auront sautées, que la paix sera là pour rester\r\nQuand sans boussole sans plan, on partira au gré du vent\r\nQuand on lèvera les voiles devenues de la poussière d''étoiles\r\n\r\nOn va s''aimer encore, après nos bons coups,\r\naprès nos déboires et de plus en plus fort \r\nOn va s''aimer encore au bout de nos doutes\r\nau bout de la route au delà de la mort \r\nOn va s''aimer encore, au bout du doute,\r\nau bout de la route au delà de la mort \r\nOn va s''aimer ...', '', '2011-06-08 03:38:26', '2011-06-08 03:38:26', '2011-06-13 03:58:55', 2),
+(611, '', '', 605, 'L''ours \r\n  \r\n          Cm        Bb             Eb \r\nJ''ai sauvé la peau d''un p''tit ours \r\n          Cm        Bb          Eb \r\nPis son coeur, je l''ai pas volé \r\n      Cm           Gm             G#      \r\nJ''ai tué l''chasseur avant qu''il shoote \r\n                    Cm \r\nEt l''ours m''a consolée \r\n  \r\n  \r\nTu es doux et juste un peu farouche \r\nMais je sais que je t''aprivoiserai  \r\nTu as mordu dans mon coeur à pleine bouche \r\nEt t''y est installé \r\n  \r\nLes années se suivent et nous rassemblent \r\nIl y a toujours plus à partager \r\nDans la tanière qui abrite nos confidences \r\nNous on a hiberné \r\n  \r\nPuis un jour c''est l''été et c''est dimanche \r\nEt les framboises poussent par milliers \r\nJ''ai tâché de fruits rouges ma robe blanche \r\nEt je vais t''épouser \r\n  \r\nLes yeux fermés, main dans la patte, on avance \r\nDans l''allée d''un champs d''blé d''inde shooté \r\nUn doux mélange de romance et de démence \r\nQuand le fermier a tiré \r\n  \r\n{Instrumental} \r\n  \r\nCe matin j''me suis faite une p''tite bouffe \r\nMais à vrai dire ça passait pas vraiment \r\nJ''m''étais même préparé un bol de soupe \r\nEt j''espérais te voir dedans \r\n  \r\nMais en vain, je l''ai scruté à galops \r\nAucune trace de toi dedans, de sang \r\nDis t''es où à présent, mon p''tit ours \r\nTa fourrure traîne su''l divan', '', '2011-08-23 21:23:45', '2011-08-23 21:23:45', '2011-08-25 19:20:24', 2);
