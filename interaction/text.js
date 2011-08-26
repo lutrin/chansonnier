@@ -88,6 +88,7 @@
       this.text += "</p>";
       replaceList = [
         [/\s/g, "&nbsp;"],
+        [/[<]p[>][\s|&nbsp;]+[<][\/]p[>]/g, "<p class='break'>&nbsp;</p>"],
         [/[<]p[>][<][\/]p[>]/g, "<p class='break'>&nbsp;</p>"]
       ];
       _c.eachItem(replaceList, replacing);
