@@ -35,7 +35,7 @@ $MERGE_LIST = array(
                         "../style/form.css",
                         "../style/text.css",
                         "../style/rounded.css"*/ ),
-        "js" => array( "../../external/interaction/jquery-1.6.1.min.js",
+        "js" => array( "../../external/interaction/jquery-src.js",
                        "../../external/interaction/jquery-ui-1.8.11.custom.min.js",
                        "../../library/interaction/common.js",
                        "../interaction/main.js" )
@@ -45,7 +45,7 @@ $MERGE_LIST = array(
                         "../style/admin.css",
                         "../style/modal.css",
                         "../../external/style/jquery.wysiwyg.css" ),
-        "js" => array( "../../external/interaction/jquery-1.3.2.min.js",
+        "js" => array( "../../external/interaction/jquery-1.6.3.min.js",
                        "../../external/interaction/jquery.wysiwyg.js",
                        "../../library/interaction/common.js",
                        "../interaction/modalWindow.js",

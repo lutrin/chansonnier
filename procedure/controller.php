@@ -101,7 +101,7 @@ function displayMain() {
               . "<link rel='stylesheet' href='style/handheld.css' media='handheld' />";
 
   # get script TODO merge on the fly
-  $scriptList = array( "../external/interaction/jquery-1.6.2.min.js",
+  $scriptList = array( "../external/interaction/jquery-src.js",
                        "../external/interaction/jquery-ui-1.8.11.custom.min.js",
                        "../library/interaction/common.js",
                        "interaction/main.js" );
