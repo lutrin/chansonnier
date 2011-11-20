@@ -241,7 +241,7 @@ var _m = {
       return false;
     });
     word = _c.select("#word");
-    word.bind("keyup change", function (event) {
+    word.on("keyup change", function (event) {
       _m.displayResult($(this));
       return _m.writeQty();
     });
