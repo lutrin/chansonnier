@@ -255,11 +255,13 @@
     }
     return false;
   },
+
+  /****************************************************************************/
   transpose: function (objectHTML) {
     var App_chord = this,
         contentSelected = objectHTML.parents("div.contentSelected:first"),
         tonalityDifference = App_chord.getDifference(contentSelected, _c.ajaxList.interaction.form);
-    contentSelected.children("div.contentBody:first > p").find("a").each(function () {
+    contentSelected.find( "div.contentBody:first > p a").each(function () {
       var idStruct = $(this).attr("name").split("_"),
           codeNote = App_chord.getTransposedCode(_c.ajaxList.data.note, idStruct[0], tonalityDifference),
           codeBass = "",

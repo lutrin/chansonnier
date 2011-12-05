@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 error_reporting (E_ALL ^ E_NOTICE);
 $DBDATA = array(
   host => "localhost",
@@ -45,7 +45,7 @@ $MERGE_LIST = array(
                         "../style/admin.css",
                         "../style/modal.css",
                         "../../external/style/jquery.wysiwyg.css" ),
-        "js" => array( "../../external/interaction/jquery-1.6.3.min.js",
+        "js" => array( "../../external/interaction/jquery-src.js",
                        "../../external/interaction/jquery.wysiwyg.js",
                        "../../library/interaction/common.js",
                        "../interaction/modalWindow.js",
@@ -56,3 +56,4 @@ $MERGE_LIST = array(
                         "../style/preview.css" )
     )
 );
+

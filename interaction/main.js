@@ -247,6 +247,9 @@ var _m = {
     });
     _c.select("#letter").click(function (event) {
       var target = $(event.target);
+      if( !target.hasClass( "optionItem" ) ) {
+        return false;
+      }
       $(this).children("li.checked:first").removeClass("checked");
       target.addClass("checked");
       _c.select("#hiddenLetter").val(target.attr("name"));
